@@ -1,0 +1,55 @@
+baseURL = 'http://solmazfs.github.io/blog'
+languageCode = 'en-us'
+title = 'blog.solmazfs'
+enableEmoji = true
+
+[params]
+
+[params.theme]
+    palette = "papercolor"
+    mode = "dark-mode"
+
+# Sidebar: about/bio
+[params.about]
+    logo = "images/batFlap.gif"
+    title = "~01/12/2021"
+    description = "I'm working on my blog website."
+
+[menu]
+
+  [[menu.main]]
+    identifier = "posts"
+    name = "Posts"
+    url = "/posts/"
+    weight = 1
+
+  [[menu.main]]
+    identifier = "categories"
+    name = "Categories"
+    url = "/categories/"
+    weight = 2
+
+  [[menu.main]]
+    identifier = "now"
+    name = "Now"
+    url = "/now/"
+    weight = 3
+
+[taxonomies]
+    category = 'categories'
+    tag = 'tags'
+[markup]
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true
+            hardWraps = false
+
+[markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = true
+    lineNumbersInTable = true
+    tabWidth = 4
+    noClasses = false

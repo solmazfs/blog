@@ -1,0 +1,16 @@
+{{ define "main" }}
+<section>
+  {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
+    {{ if eq "categories" $taxonomyname }}
+      {{ range $key, $value := $taxonomy }}
+        <div>{{ $key }}</div>
+        <ul>
+        {{ range $value.Pages }}
+        <li>{{ .Date.Format "Jan 01, 2006" }} :: <a href="{{ .Permalink }}">{{ .Title }}</a></li>
+        {{ end }}
+        </ul>
+      {{ end }}
+    {{ end }}
+  {{ end }}
+</section>
+{{ end }}

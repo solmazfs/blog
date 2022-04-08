@@ -1,0 +1,8 @@
+:root {
+    --bg: var(--black);
+    --dark-bg: var(--dark-black);
+    --bright-bg: var(--bright-black);
+    --fg: var(--red);
+    --bright-fg: var(--bright-white);
+    --text-color: var(--white);
+}

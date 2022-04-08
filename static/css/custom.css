@@ -1,0 +1,20 @@
+/* Override this file to customise the theme's CSS for your site */
+
+img {
+	max-width: 100%;
+	height: auto;
+	margin: 1.0rem auto;
+	display: block;
+	text-align:center;
+}
+
+ol {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    margin-left: 30px;
+}
+
+ol li {
+	list-style-type: decimal-leading-zero;
+}
