@@ -1,4 +1,4 @@
-baseURL = 'https://solmazfs.github.io/'
+baseURL = 'https://solmazfs.github.io/blog'
 languageCode = 'en-us'
 title = 'blog.solmazfs'
 enableEmoji = true
