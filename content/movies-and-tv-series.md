@@ -1,7 +1,7 @@
 ---
 title: "Movies&Tv-Series"
 date: 2022-04-05T19:47:25+03:00
-draft: true
+draft: false
 ---
 !work in progress
 1. [Watch list](#watch-list)

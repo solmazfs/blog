@@ -3,7 +3,7 @@ title: "Command Line General (Linux)"
 date: 2022-04-08T13:53:58+03:00
 categories: ["Tutorials & How-to's"]
 tags: [linux]
-draft: true
+draft: false
 ---
 
 1. [ffmpeg](#ffmpeg)

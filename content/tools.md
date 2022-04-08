@@ -1,7 +1,7 @@
 ---
 title: "Tools"
 date: 2022-04-07T19:29:51+03:00
-draft: true
+draft: false
 ---
 
 - Arch Linux # linux operating system

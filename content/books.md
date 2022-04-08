@@ -2,7 +2,7 @@
 title: "Books"
 description: "--> A list of books I've read, that I want to read and that I'm currently reading."
 date: 2022-04-05T18:29:33+03:00
-draft: true
+draft: false
 ---
 !work in progress
 ## Currently reading

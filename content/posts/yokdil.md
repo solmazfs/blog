@@ -2,7 +2,7 @@
 title: "YÖKDİL Genel Notlar"
 date: 2022-04-08
 categories: ["Academic Life"]
-draft: true
+draft: false
 ---
 
 !work in progress

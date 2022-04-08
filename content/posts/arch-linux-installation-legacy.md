@@ -3,7 +3,7 @@ title: "Arch Linux Installation (Legacy)"
 date: 2021-11-29T00:10:24+03:00
 categories: [Tutorials & How-to's]
 tags: [arch-linux,secure]
-draft: true
+draft: false
 ---
 
 :heavy_exclamation_mark: (BIOS type {Legacy})

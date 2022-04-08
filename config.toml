@@ -1,7 +1,8 @@
-baseURL = 'http://solmazfs.github.io/blog'
+baseURL = 'https://solmazfs.github.io/'
 languageCode = 'en-us'
 title = 'blog.solmazfs'
 enableEmoji = true
+relativeURLs = true
 
 [params]
 

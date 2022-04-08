@@ -2,7 +2,7 @@
 title: "ALES(SÖZEL) Genel Notlar"
 date: 2021-11-29T18:43:45+03:00
 categories: ["Academic Life"]
-draft: true
+draft: false
 ---
 
 !work in progress
