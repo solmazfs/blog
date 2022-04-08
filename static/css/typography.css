@@ -196,7 +196,6 @@ sub {
 table {
     border-spacing: 0;
     margin: 0 0 1.5rem 0;
-    overflow-wrap: anywhere;
 }
 th, td {
     padding:0 4px;
