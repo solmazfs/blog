@@ -8,7 +8,7 @@
     <tr>
         <td>{{ .Date.Format "Jan 01, 2006" }}</td>
         <td>::</td>
-        <td><a href="{{ .Permalink }}">{{ .Title | markdownify | safeHTML | truncate 40 }}</a></td>
+        <td><a href="{{ .Permalink }}">{{ .Title | markdownify | safeHTML | truncate 30 }}</a></td>
         <td>@</td>
         <td>{ {{ range $i, $e := .Params.tags }}{{- if $i -}}, {{ end -}}<span style="color:gray;">{{ . }}</span>{{ end }} }</td>
     </tr>
