@@ -11,3 +11,5 @@ Currently reading: **Hiçten Az**, Slavoj Žižek. See other [readings](/blog/bo
 Movies&Tv-Series list: [movies&tv-series](/blog/movies-and-tv-series)
 
 Music: [music](/blog/music)
+
+<span style="background:blue;">* This website has no tracking or analytics.</span>

@@ -1,7 +1,10 @@
 baseURL = 'https://solmazfs.github.io/blog'
 languageCode = 'en-us'
+copyright = '© 2021-2022'
 title = 'blog.solmazfs'
 enableEmoji = true
+[author]
+    name = 'solmazfs'
 
 [params]
 
