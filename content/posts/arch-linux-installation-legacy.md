@@ -42,94 +42,102 @@ draft: false
 
 ## Step-3:
 (Disk partitioning --> {legacy})
-* cfdisk --> !label type [dos]
+- cfdisk --> !label type [dos]
     - new --> !primary
     - bootable
-    - write --> yes
+    - write --> type < yes >
     - quit
 
-- lsblk
-    - TODO: eg. output
+- lsblk # sda, sda1
 
 ## Step-4:
 (Encryption --> cryptsetup/luks)
-- cryptsetup luksFormat --type luks1 -c aes-xts-plain64 --use-random -S 1 -s 512 -h sha512 -i 5000 /dev/sda1
-    - YES --> enter pass
+- cryptsetup luksFormat --type luks1 --use-random -S 1 -s 512 -h sha512 /dev/sda1 # type < YES > --> enter pass
 - cryptsetup luksOpen /dev/sda1 enc-arch
+
+## Step-5
+(physical&logical volume(s))
 - pvcreate /dev/mapper/enc-arch
 - vgcreate Arch /dev/mapper/enc-arch
-- lvcreate -L 5G Arch -n swap #5gb for swap size
-- lvcreate -l 100%FREE Arch -n root
+- lvcreate -L 3G Arch -n swap # !for 3gb ram
+- lvcreate -L 32G Arch -n root
+- lvcreate -l 100%FREE Arch -n home
 
-## Step 5:
+## Step 6:
 (Formatting&Mounting)
 - mkswap /dev/mapper/Arch-swap
 - mkfs.ext4 /dev/mapper/Arch-root
+- mkfs.ext4 /dev/mapper/Arch-home
 - mount /dev/mapper/Arch-root /mnt
+- mkdir /mnt/home
+- mount /dev/mapper/Arch-home /mnt/home
 - swapon /dev/mapper/Arch-swap
 - mkdir /mnt/boot #!todo
 
-## Step 6:
-(Downloading base)
-- pacstrap /mnt base base-devel grub dialog dhcpcd lvm2 linux linux-firmware linux-headers vim
-
 ## Step 7:
+(Downloading base)
+- pacstrap /mnt base base-devel linux linux-firmware linux-headers mkinitcpio networkmanager wpa_supplicant dialog dhcpcd lvm2  vim terminus-font grub
+
+## Step 8:
 (TODO)
 - genfstab -U /mnt >> /mnt/etc/fstab
 - cat /mnt/etc/fstab
 
-## Step 8:
-(Timezone)
-- arch-chroot /mnt /bin/bash
-- ln -s /usr/share/zoneinfo/UTC /etc/localtime
-- hwclock --systohc --utc
+## Step 9:
+(enter new system chroot)
+- arch-chroot /mnt
 
 ## Step 9:
+(Timezone)
+- timedatectl set-timezone "$(curl -s --fail https://ipapi.co/timezone)"
+- timedatectl set-ntp true
+- hwclock --systohc --utc
+
+## Step 10:
 (Language)
 - echo dev > /etc/hostname
 - sed -i '/en_US.UTF-8 UTF-8/s/^#//g' /etc/locale.gen
 - echo LANG=en_us.UTF-8 > /etc/locale.conf
 - locale-gen
 
-## Step 10:
+## Step 11:
 (root&user setup)
 - passwd # root password
 - useradd -m -G wheel -s /bin/bash arch-user
 - passwd arch-user
 
-## Step 11:
-(TODO)
-- mkdir /root/secrets && chmod 700 /root/secrets
-- dd bs=512 count=4 if=/dev/random of=/root/secrets/shadow.bin iflag=fullblock
-- chmod 600 /root/secrets/shadow.bin
-- cryptsetup luksAddKey /dev/sda1 /root/secrets/shadow.bin #enter pass
-- cryptsetup luksDump /dev/sda1 #luks key slot 0-1
-
 ## Step 12:
 (TODO)
-- vim /etc/mkinitcpio.conf
-    - FILES(/root/secrets/shadow.bin)
-    - HOOKS(keymap encrypt lvm2 ...)
-- mkinitcpio -p linux
-
+- mkdir /root/.cryptlvm && chmod 700 /root/.cryptlvm
+- dd bs=512 count=4 if=/dev/random of=/root/.cryptlvm/archluks.bin iflag=fullblock
+- chmod 600 /root/.cryptlvm/archluks.bin
+- cryptsetup -v luksAddKey /dev/sda1 /root/.cryptlvm/archluks.bin #enter pass
+- cryptsetup luksDump /dev/sda1 #luks key slot 0-1
 
 ## Step 13:
 (TODO)
-- vim /etc/default/grub
-    - GRUB_ENABLE_CRYPTODISK=y #uncomment this line
-- grub-install --target=i386-pc --bootloader-id=ArchLinux /dev/sda
-- vim /etc/default/grub
-    - GRUB_CMDLINE_LINUX="crypdevice=/dev/sda1:enc-arch resume=/dev/mapper/Arch-swap"
-- grub-mkconfig -o /boot/grub/grub.cfg
+- vim /etc/mkinitcpio.conf
+    - FILES(/root/.cryptlvm/archluks.bin)
+    - HOOKS(base udev autodetect modconf block encrypt lvm2 filesystems keyboard fsck)
+- mkinitcpio -p linux
+
 
 ## Step 14:
+(TODO)
+- vim /etc/default/grub
+    - GRUB_ENABLE_CRYPTODISK=y #uncomment this line
+    - GRUB_CMDLINE_LINUX="crypdevice=/dev/sda1:enc-arch resume=/dev/mapper/Arch-swap"
+- grub-install --target=i386-pc --bootloader-id=ArchLinux /dev/sda
+- grub-mkconfig -o /boot/grub/grub.cfg
+
+## Step 15:
 (TODO)
 - exit
 - umount -R /mnt
 - swapoff -a
 - reboot #unplug USB
 
-## Step 15:
+## Step 16:
 (General Setup)
 - #login as root
 - vim /etc/sudoers
@@ -140,16 +148,17 @@ draft: false
 - pacman -S linux-headers dkms networkmanager?
 - pacman -S xorg xorg-apps #(optional?)
 
-## Step 16:
+## Step 17:
 (Install Gnome)
 - pacman -S gnome
 - systemctl enable gdm #!for user
 
-## Step 17:
+## Step 18:
 (Optional)
 - pacman -Rns gnome-software gnome-maps epiphany
 - pacman -S chromium
 
-&(Thanks to [@huntrar](https://gist.github.com/huntrar))
-> https://gist.github.com/huntrar/e42aee630bee3295b2c671d098c81268
+&(Thanks to [@huntrar](https://gist.github.com/huntrar) & [@pad92](https://gitlab.com/pad92))
 > https://wiki.archlinux.org/title/Installation_guide
+> https://gist.github.com/huntrar/e42aee630bee3295b2c671d098c81268
+> https://gitlab.com/pad92/dotfiles/-/blob/master/archlinux/install.md
