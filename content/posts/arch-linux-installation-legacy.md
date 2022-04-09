@@ -158,7 +158,8 @@ draft: false
 - pacman -Rns gnome-software gnome-maps epiphany
 - pacman -S chromium
 
+---
 &(Thanks to [@huntrar](https://gist.github.com/huntrar) & [@pad92](https://gitlab.com/pad92))
-> https://wiki.archlinux.org/title/Installation_guide
-> https://gist.github.com/huntrar/e42aee630bee3295b2c671d098c81268
-> https://gitlab.com/pad92/dotfiles/-/blob/master/archlinux/install.md
+- https://wiki.archlinux.org/title/Installation_guide
+- https://gist.github.com/huntrar/e42aee630bee3295b2c671d098c81268
+- https://gitlab.com/pad92/dotfiles/-/blob/master/archlinux/install.md
