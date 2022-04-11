@@ -52,15 +52,15 @@ draft: false
 
 ## Step-4:
 (Encryption --> cryptsetup/luks)
-- cryptsetup luksFormat --type luks1 --use-random -S 1 -s 512 -h sha512 /dev/sda1 # type < YES > --> enter pass
-- cryptsetup luksOpen /dev/sda1 enc-arch
+- cryptsetup luksFormat --type luks1 --use-random -S 1 -s 512 -h sha512 /dev/< sda1 > # type < YES > --> enter pass
+- cryptsetup luksOpen /dev/sda1 < enc-arch >
 
 ## Step-5
 (physical&logical volume(s))
 - pvcreate /dev/mapper/enc-arch
-- vgcreate Arch /dev/mapper/enc-arch
-- lvcreate -L 3G Arch -n swap # !for 3gb ram
-- lvcreate -L 32G Arch -n root
+- vgcreate < Arch > /dev/mapper/enc-arch
+- lvcreate -L < 3G > Arch -n swap # !for 3gb ram
+- lvcreate -L < 32G > Arch -n root # !32|50 gb should be enough
 - lvcreate -l 100%FREE Arch -n home
 
 ## Step 6:
@@ -72,7 +72,7 @@ draft: false
 - mkdir /mnt/home
 - mount /dev/mapper/Arch-home /mnt/home
 - swapon /dev/mapper/Arch-swap
-- mkdir /mnt/boot #!todo
+- mkdir /mnt/boot
 
 ## Step 7:
 (Downloading base)
