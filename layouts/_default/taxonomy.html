@@ -4,11 +4,14 @@
     {{ if eq "categories" $taxonomyname }}
       {{ range $key, $value := $taxonomy }}
         <div>{{ $key }}</div>
-        <ul>
+        <table>
         {{ range $value.Pages }}
-        <li>{{ .Date.Format "Jan 01, 2006" }} :: <a href="{{ .Permalink }}">{{ .Title }}</a></li>
+        
+        <tr>
+        <td>{{ .Date.Format "Jan 01, 2006" }}</td> <td>::</td><td><a href="{{ .Permalink }}">{{ .Title }}</a></td>
+        </tr>
         {{ end }}
-        </ul>
+        </table>
       {{ end }}
     {{ end }}
   {{ end }}

@@ -9,7 +9,7 @@ enableEmoji = true
 [params]
 
 [params.theme]
-    palette = "papercolor"
+    palette = "cyberpunk"
     mode = "dark-mode"
 
 # Sidebar: about/bio

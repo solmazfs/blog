@@ -16,8 +16,8 @@ Sorularınız olursa iletişim e-postası üzerinden benimle iletişim sağlayab
 
 ALES soruları özellikle son yıllarda adayların mukayese yapma yeteneğine bir hayli ağırlık vermekte.
 Dolayısıyla mukayese yapma konusunda stratejik düşünme becerisi kazanmaya ağırlık vermek faydalı olacaktır.
-ALES sınavı soruların ağırlığına ek olarak zaman yettirememe problemi ve yapabildiğin kadar çok soru yap ama yanlış sayın mümkün olduğunca az olsun üzerine kurulu olduğundan ve tüm bunların üzerine standart sapma sistemi eklendiğinden adaylar oldukça hüsrana uğrayabilmektedir.
-Şunu açıkça belirtmeliyim ki ALES sınavının psikolojisini doğru anlamak bunu sağlamak için <mark>şimdiye kadar çıkmış tüm soruları</mark> edinip düzenli aralıklarla bıkmadan, usanmadan deneme yapmak yeterliliğinizi ölçmek anlamında oldukça önemlidir.
+ALES sınavı soruların görece ağırlığından kaynaklı zaman yettirememe problemi ve yapabildiğin kadar çok soru yap ama yanlış sayın mümkün olduğunca az olsun üzerine kurulu olduğundan ve tüm bunların üzerine standart sapma sistemi eklendiğinden adaylar oldukça hüsrana uğrayabilmektedir.
+Şunu açıkça belirtmeliyim ki ALES sınavının psikolojisini doğru anlamak bunu sağlamak için <span class="mark">şimdiye kadar çıkmış tüm soruları</span> edinip düzenli aralıklarla bıkmadan, usanmadan deneme yapmak yeterliliğinizi ölçmek anlamında oldukça önemlidir.
 Ek olarak kitap/makale okumak; bilimsel, felsefi, kültürel yapıt/yayın okumak bir şeydir ama sınav adına her şey değildir.
 Bizler halihazırda akademik kariyer yolunda okuyan/araştıran insanlarız, ancak sınav hakimiyeti ne denli artırılırsa o denli özgüvene sahip olup soru kaçırma olasılığını azaltabiliriz.
 
@@ -32,21 +32,24 @@ cevabı olabilir. Çok genel bir ifadeyle söylenmiş bir söz sizin de dikkatin
 olasılığı yüksek olabilir. Bu nedenle şıkların hepsine bir göz gezdirmekte fayda var.
 
 ### Boşluk doldurma
-- Genel olarak parçada geçen anahtar ifade/kelime şıklarda bulunabilir.
-- Parçada ifade edilen anahtar kelimenin ne hakkında olduğuna bakılarak en uygun sözcük seçilmelidir.
+* Genel olarak parçada geçen anahtar ifade/kelime şıklarda bulunabilir.
+
+* Parçada ifade edilen anahtar kelimenin ne hakkında olduğuna bakılarak en uygun sözcük seçilmelidir.
 
 ### Paragrafta sıralama
-- Bu sorular yapboz misali birbirine zincirleme bağlantılar kurularak yapılır.
-    - Sıralama soruları, bir sonraki cümleyi/parçayı bulmayı zorlaştıran seçici bir soru olabilir.
-İlk bakışta sıralama kolayca yapılırken aslında soruda gözden kaçan kurnazca hazırlanmış bir başka
+* Bu sorular yapboz misali birbirine zincirleme bağlantılar kurularak yapılır.
+    - Sıralama soruları, bir sonraki cümleyi/parçayı bulmayı zorlaştıran seçici bir soru olabilir. İlk bakışta sıralama kolayca yapılırken aslında soruda gözden kaçan kurnazca hazırlanmış bir başka
 cümle/parça bulunabilir. Bazen bunu hiç görmeyiz, bazen de gördüğümüz halde ikisi arasında gider geliriz... (Çıkmış sorularda "Kongo Nehri..." bu duruma güzel bir örnek olabilir.)
-- Paragrafta sıralama sorularında öncelikle giriş cümlesi bulunmalı.
-- Cümle oluşturma sorusunda önce yüklem bulunmalı sondan başa doğru sıralanmalı.
+
+* Paragrafta sıralama sorularında öncelikle giriş cümlesi bulunmalı.
+
+* Cümle oluşturma sorusunda önce yüklem bulunmalı sondan başa doğru sıralanmalı.
     - Son parçayı bulmak kolay bir öncekini de bulduk diyelim, bazen ondan da bir öncekini bulmak bir hayli
 zor olabilir. Biz bulduklarımızı göz önünde bulundurarak hızlıca tam cümleyi kafamızda kurmayı deneyebiliriz.
 Mantıklı olan için mukayese yapmak burada devreye girecektir.
 
 ### Sözel mantık
-- Bu sorular, çözüm mantığını biliyorsanız net sayınızı artırma bakımından tadından yenmez sorulardandır.
-Youtube üzerinden **İlyas Güneş** hocanın sözel mantık çözüm videoları çok faydalı. Bu videolarla sözel mantık sorularının çözüm yöntemleri
-temellendirildiğinde ve birkaç deneme ile pekiştirildiğinde artık bu sorular gözümüzü korkutmayacak aksine 8 soru cepte şeklinde bir umut ışığı olacaktır.
+
+* Bu sorular, çözüm mantığını biliyorsanız net sayınızı artırma bakımından tadından yenmez sorulardandır.
+Youtube üzerinden **İlyas Güneş** hocanın sözel mantık çözüm videoları çok faydalı.
+Bu videolarla sözel mantık sorularının çözüm yöntemleri temellendirildiğinde ve birkaç deneme ile pekiştirildiğinde artık bu sorular gözümüzü korkutmayacak aksine 8 soru cepte şeklinde bir umut ışığı olacaktır.
