@@ -3,13 +3,14 @@
 
 :root {
     /*--font-monospace: "Fira Mono", monospace;*/
-    --font-monospace: "IBM Plex Mono", monospace;
+    /*--font-monospace: "IBM Plex Mono", monospace;*/
+    --font-monospace: sans-serif;
 }
 
 body {
     font-family: var(--font-monospace);
     font-size: 16px;
-    line-height: 1.5rem;
+    line-height: 1.2rem;
 }
 
 /* Headings */
@@ -55,7 +56,7 @@ h3:before,
 h4:before, 
 h5:before, 
 h6:before {
-    color: var(--bright-bg);
+    color: var(--dark-gray);
 }
 
 h1:first-child {
@@ -64,10 +65,13 @@ h1:first-child {
 
 /* Paragraphs */
 p {
-    margin: 0 0 1.5rem 0;
+    line-height: 25px;
+   /* margin: 0 0 1.5rem 0;*/
 }
-
 /* Links */
+a {
+    text-decoration:none;
+}
 
 a:link, a:visited {
     color: var(--fg);
@@ -97,11 +101,11 @@ ol ol {
 
 ul li::marker {
     content: '∗\00A0';
-    color: var(--bright-bg);
+    color: var(--dark-gray);
 }
 
 ol li::marker {
-    color: var(--bright-bg);
+    color: var(--red-linenr);
 }
 
 dt {
@@ -131,7 +135,7 @@ blockquote {
 blockquote::before {
     position: absolute;
     left: -1.5rem;
-    color: var(--bright-bg);
+    color: var(--bright-purple);
 }
 
 .twitter-tweet::before {
@@ -147,7 +151,7 @@ kbd,
 samp {
     background: var(--dark-bg) !important;
     font-family: var(--font-monospace);
-    color: var(--bright-bg);
+    color: var(--bright-purple);
 }
 
 pre {
@@ -165,8 +169,13 @@ strong {
 /* Highlighting */
 ::selection,
 mark {
-    background-color: var(--dark-white);
-    color: var(--bg);
+    background-color: var(--white);
+    color: var(--black);
+}
+.mark {
+    background-color: var(--dark-red);
+    color: var(--bright-red);
+    font-weight:bold;
 }
 
 /* Other typographic elements */
@@ -177,7 +186,7 @@ hr {
 
 hr:after {
     content: '---';
-    color: var(--bright-bg);
+    color: var(--bright-purple);
 }
 
 
