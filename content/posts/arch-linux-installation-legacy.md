@@ -123,10 +123,11 @@ draft: false
 
 
 ## Step 14:
-(TODO)
-- vim /etc/default/grub
-    - GRUB_ENABLE_CRYPTODISK=y #uncomment this line
-    - GRUB_CMDLINE_LINUX="crypdevice=/dev/sda1:enc-arch resume=/dev/mapper/Arch-swap"
+(Grub)
+- UUID=$(blkid /dev/sda1 -s UUID -o value)
+- sed -i "/^GRUB_CMDLINE_LINUX=/cGRUB_CMDLINE_LINUX=\"cryptdevice=UUID=${UUID}:enc-arch root=/dev/mapper/Arch-root cryptkey=rootfs:/root/.cryptlvm/archluks.bin\""  /etc/default/grub
+- sed -i "/GRUB_ENABLE_CRYPTODISK=/cGRUB_ENABLE_CRYPTODISK=y" /etc/default/grub
+
 - grub-install --target=i386-pc --bootloader-id=ArchLinux /dev/sda
 - grub-mkconfig -o /boot/grub/grub.cfg
 
@@ -136,6 +137,8 @@ draft: false
 - umount -R /mnt
 - swapoff -a
 - reboot #unplug USB
+
+---
 
 ## Step 16:
 (General Setup)
