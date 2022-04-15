@@ -23,3 +23,7 @@ draft: false
 ---
 - convert mp4 to mp3
     - ffmpeg -i input.mp4 -vn -acodec libmp3lame -ac 2 -ab 160k -ar 48000 output.mp3
+
+## 
+- sync two files
+    - rsync ~/.bashrc backup/.bashrc
