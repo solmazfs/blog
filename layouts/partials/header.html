@@ -1,10 +1,8 @@
-<h1 class="page__logo"><a href="{{ .Site.BaseURL }}" class="page__logo-inner">{{ .Site.Title }}</a></h1>
-<nav class="page__nav main-nav">
+ <a href="{{ .Site.BaseURL }}"><img alt="solmazfs" src="{{ .Site.BaseURL }}/images/solmazfs.svg" loading="lazy"></a>
+<nav>
     <ul>
-    {{ $currentPage := . }}
-    {{ range .Site.Menus.main }}
-    <li class="main-nav__item"><a class="nav-main-item{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a></li>
-    {{ end }}
+        {{ range .Site.Menus.main }}
+        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+        {{ end }}
     </ul>
 </nav>
-

@@ -1,19 +1,17 @@
 {{ define "main" }}
-<section>
+<aside class="counter-skip" style="margin-bottom:26px;">
   {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
     {{ if eq "categories" $taxonomyname }}
       {{ range $key, $value := $taxonomy }}
-        <div>{{ $key }}</div>
-        <table>
+        <h3>{{ $key }}</h3>
         {{ range $value.Pages }}
         
-        <tr>
-        <td>{{ .Date.Format "Jan 01, 2006" }}</td> <td>::</td><td><a href="{{ .Permalink }}">{{ .Title }}</a></td>
-        </tr>
+        <div style="margin-left:12px;">
+        <span>{{ .Date.Format "Jan 01, 2006" }}</span> <span>::</span><span><a href="{{ .Permalink }}">{{ .Title }}</a></span>
+        </div>
         {{ end }}
-        </table>
       {{ end }}
     {{ end }}
   {{ end }}
-</section>
+</aside>
 {{ end }}

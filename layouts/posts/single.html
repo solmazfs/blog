@@ -2,12 +2,13 @@
 <aside class="counter-skip">
     <cite>{{ .Title }}</cite>
     <cite> {{ .Date.Format "Jan 02, 2006" }} </cite>
+    <cite> {{ .WordCount }} Words</cite>
     <cite> {{ .Params.Ready }} </cite>
     <br>
     <br>
     <p><i>"{{ .Description }}"</i></p>
 </aside>
-<article class="counter-skip">
+<section class="counter-skip">
     {{ .Content }}
-</article>
+</section>
 {{ end }}
