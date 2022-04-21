@@ -7,10 +7,10 @@ Latest projects: -
 
 <img src="images/red.png" loading="lazy"/> 
 
-Currently reading: **Hiçten Az**, Slavoj Žižek. See other [readings](/books).
+Currently reading: **Hiçten Az**, Slavoj Žižek. See other [readings](blog/books).
 
-Movies&Series list: [movies&series](/movies-and-series)
+Movies&Series list: [movies&series](blog/movies-and-series)
 
-Music: [music](/music)
+Music: [music](blog/music)
 
 <cite>This website has no tracking or analytics.</cite>
