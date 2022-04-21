@@ -24,8 +24,8 @@
      inkscape:document-units="px"
      showgrid="false"
      inkscape:zoom="8"
-     inkscape:cx="63.3125"
-     inkscape:cy="12.625"
+     inkscape:cx="53.9375"
+     inkscape:cy="14.5"
      inkscape:window-width="1600"
      inkscape:window-height="831"
      inkscape:window-x="0"
@@ -39,19 +39,42 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:22.1733px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.554333"
-       x="1.4852711"
-       y="20.615322"
+    <g
+       aria-label="solmazfs"
        id="text16179"
-       inkscape:export-filename="/home/parodia/rect16203.png"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96"><tspan
-         sodipodi:role="line"
-         id="tspan16177"
-         x="1.4852711"
-         y="20.615322"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Galactico;-inkscape-font-specification:Galactico;fill:#000000;stroke-width:0.554333">solmazfs</tspan></text>
+       style="font-size:22.1733px;line-height:1.25;stroke-width:0.554333">
+      <path
+         d="M 5.2325588,20.615322 V 17.51106 H 2.1504701 v 3.104262 z M 17.627433,14.406798 V 5.0940123 H 2.1504701 L 12.97104,20.615322 h 3.880328 L 8.1816076,8.1982742 h 6.3415634 v 6.2085238 z"
+         style="font-family:Galactico;-inkscape-font-specification:Galactico"
+         id="path8" />
+      <path
+         d="M 35.388264,17.51106 26.718503,5.0940123 h -7.738481 v 3.1042619 h 6.031137 L 31.507936,17.51106 H 18.980022 v 3.104262 H 37.561247 V 17.51106 Z"
+         style="font-family:Galactico;-inkscape-font-specification:Galactico"
+         id="path10" />
+      <path
+         d="M 41.99591,8.1982742 V 5.0940123 h -3.082088 v 3.1042619 z m 0,12.4170478 v -3.082089 h -3.082088 v 3.082089 z M 45.100172,5.0940123 v 3.1042619 h 6.186351 V 17.51106 h -6.186351 v 3.104262 h 9.290613 V 5.0940123 Z"
+         style="font-family:Galactico;-inkscape-font-specification:Galactico"
+         id="path12" />
+      <path
+         d="m 65.033986,20.615322 v -6.208524 h -3.104262 v 6.208524 z m 6.18635,0 V 5.0940123 H 68.116075 V 20.615322 Z m -15.476963,0 h 3.082089 V 8.1982742 h 3.104262 v 3.1042618 h 3.104262 V 5.0940123 h -9.290613 z"
+         style="font-family:Galactico;-inkscape-font-specification:Galactico"
+         id="path14" />
+      <path
+         d="M 84.945626,5.0940123 V 7.2669956 L 72.572925,15.914583 v 4.700739 h 3.082089 v -2.993395 l 9.290612,-6.474604 v 9.467999 h 3.104262 V 5.0940123 Z"
+         style="font-family:Galactico;-inkscape-font-specification:Galactico"
+         id="path16" />
+      <path
+         d="M 104.87944,8.1982742 V 5.0940123 h -3.10426 V 8.1982742 Z M 94.036696,5.0940123 H 90.156369 L 98.848302,17.51106 h -6.363737 v -6.18635 h -3.082088 v 9.290612 h 15.476963 z"
+         style="font-family:Galactico;-inkscape-font-specification:Galactico"
+         id="path18" />
+      <path
+         d="m 109.31412,17.51106 v -3.104262 h 6.20852 v -3.104262 h -6.20852 V 5.0940123 h -3.08209 V 20.615322 h 15.47696 V 17.51106 Z"
+         style="font-family:Galactico;-inkscape-font-specification:Galactico"
+         id="path20" />
+      <path
+         d="M 126.14367,20.615322 V 17.51106 h -3.08209 v 3.104262 z m 12.39487,-6.208524 V 5.0940123 h -15.47696 l 10.82057,15.5213097 h 3.88033 L 129.09272,8.1982742 h 6.34156 v 6.2085238 z"
+         style="font-family:Galactico;-inkscape-font-specification:Galactico"
+         id="path22" />
+    </g>
   </g>
 </svg>
