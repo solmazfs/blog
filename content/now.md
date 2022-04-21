@@ -3,7 +3,7 @@ title: "Now"
 date: 2022-04-20T00:33:18+03:00
 description: "what I'm up to"
 ready: "🧿"
-draft: true
+draft: false
 ---
 
 05.04.2022, I applied for a "lecturer" position for the first time.
