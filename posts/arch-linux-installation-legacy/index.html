@@ -1,1 +1,166 @@
-<!doctype html><html lang=en><head><title>Arch Linux Installation (Legacy) &ndash; blog.solmazfs</title><meta name=description content="I'm working on my blog website."><meta name=viewport content="width=device-width,initial-scale=1"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin=anonymous><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css integrity="sha512-b1ASx0WHgVFL5ZQhTgiPWX+68KjS38Jk87jg7pe+qC7q9YkEtFq0z7xCglv7qGIs/68d3mAp+StfC8WKC5SSAg==" crossorigin=anonymous><link rel=stylesheet href=https://solmazfs.github.io/blog/css/syntax.css><link rel=stylesheet href=https://solmazfs.github.io/blog/css/colour/cyberpunk.css><link rel=stylesheet href=https://solmazfs.github.io/blog/css/colour/dark-mode.css><link rel=stylesheet href=https://solmazfs.github.io/blog/css/risotto.css><link rel=stylesheet href=https://solmazfs.github.io/blog/css/custom.css></head><body translate=no><div class=page><header class=page__header><h1 class=page__logo><a href=https://solmazfs.github.io/blog class=page__logo-inner>blog.solmazfs</a></h1><nav class="page__nav main-nav"><ul><li class=main-nav__item><a class=nav-main-item href=/blog/posts/ title>Posts</a></li><li class=main-nav__item><a class=nav-main-item href=/blog/categories/ title>Categories</a></li><li class=main-nav__item><a class=nav-main-item href=/blog/now/ title>Now</a></li></ul></nav></header><section class=page__body><header class=content__header><h1>Arch Linux Installation (Legacy)</h1></header><div class=content__body><p>❗ (BIOS type [Legacy])</p><ol><li><a href=#step-1>Make Bootable USB</a></li><li><a href=#step-2>Wipe Disk</a></li><li><a href=#step-3>Disk partitioning</a></li><li><a href=#step-4>Encryption</a></li><li><a href=#step-5>Create Physical&Logical Volume(s)</a></li><li><a href=#step-6>Formatting&Mounting</a></li><li><a href=#step-7>Install base</a></li><li><a href=#step-8>Generate fstab</a></li><li><a href=#step-9>Enter new system</a></li><li><a href=#step-10>Timezone</a></li><li><a href=#step-11>Language</a></li><li><a href=#step-12>root&user setup</a></li><li><a href=#step-13>Luks key</a></li><li><a href=#step-14>TODO</a></li><li><a href=#step-15>Grub</a></li><li><a href=#step-16>Exit</a></li><li><a href=#step-17>Update System</a></li><li><a href=#step-18>Install Gnome</a></li><li><a href=#step-19>Optional</a></li></ol><h2 id=step-1>Step 1:</h2><p>(make bootable USB)</p><ul><li>Download iso &ndash;> !verify</li><li>sudo dd bs=4M if=archlinux-<em>version</em>-x86_64.iso of=/dev/&lt; sdX > conv=fsync oflag=direct status=progress</li><li>-or-</li><li>Use gnome-disk for make bootable USB &ndash;> restore disk image</li><li>Setup bios for booting from USB &ndash;> boot arch-linux</li></ul><h2 id=step-2>Step 2:</h2><p>(wipe disk)</p><p>❗ Before this step you may need backup your important files. This process will wipe out all data in your hard drive.</p><ul><li>DEVICE="/dev/sdX"</li><li>PASS=$(tr -cd &lsquo;[:alnum:]&rsquo; &lt; /dev/urandom | head -c128)</li><li>openssl enc -aes-256-ctr -pass pass:"$PASS" -nosalt &lt; /dev/zero | dd obs=64K ibs=4K of=$DEVICE oflag=direct status=progress</li></ul><h2 id=step-3>Step-3:</h2><p>(disk partitioning &ndash;> [legacy])</p><ul><li><p>cfdisk &ndash;> !label type [dos]</p><ul><li>new &ndash;> [enter] !primary</li><li>bootable</li><li>write &ndash;> type &lt; yes ></li><li>quit</li></ul></li><li><p>lsblk # sda, sda1</p></li></ul><h2 id=step-4>Step-4:</h2><p>(encryption &ndash;> cryptsetup/luks)</p><ul><li>cryptsetup luksFormat &ndash;type luks1 &ndash;use-random -S 1 -s 512 -h sha512 /dev/&lt; sda1 > # type &lt; YES > &ndash;> enter pass</li><li>cryptsetup luksOpen /dev/sda1 &lt; enc-arch ></li></ul><h2 id=step-5>Step-5</h2><p>(create physical&logical volume(s))</p><ul><li>pvcreate /dev/mapper/enc-arch</li><li>vgcreate &lt; Arch > /dev/mapper/enc-arch</li><li>lvcreate -L &lt; 3G > Arch -n swap # !for 3gb ram</li><li>lvcreate -L &lt; 32G > Arch -n root # !32|50 GB should be enough</li><li>lvcreate -l 100%FREE Arch -n home</li></ul><h2 id=step-6>Step 6:</h2><p>(formatting&mounting)</p><ul><li>mkswap /dev/mapper/Arch-swap</li><li>mkfs.ext4 /dev/mapper/Arch-root</li><li>mkfs.ext4 /dev/mapper/Arch-home</li><li>mount /dev/mapper/Arch-root /mnt</li><li>mkdir /mnt/home</li><li>mount /dev/mapper/Arch-home /mnt/home</li><li>swapon /dev/mapper/Arch-swap</li><li>mkdir /mnt/boot</li></ul><h2 id=step-7>Step 7:</h2><p>(install base)</p><ul><li>pacstrap /mnt base base-devel linux linux-firmware linux-headers mkinitcpio networkmanager wpa_supplicant dialog dhcpcd lvm2 vim terminus-font grub</li></ul><h2 id=step-8>Step 8:</h2><p>(create fstab)</p><ul><li>genfstab -U /mnt &#187; /mnt/etc/fstab</li><li>cat /mnt/etc/fstab</li></ul><h2 id=step-9>Step 9:</h2><p>(enter new system chroot)</p><ul><li>arch-chroot /mnt</li></ul><h2 id=step-10>Step 10:</h2><p>(timezone)</p><ul><li>timedatectl set-timezone &ldquo;$(curl -s &ndash;fail <a href=https://ipapi.co/timezone)%22>https://ipapi.co/timezone)"</a></li><li>timedatectl set-ntp true</li><li>hwclock &ndash;systohc &ndash;utc</li></ul><h2 id=step-11>Step 11:</h2><p>(language)</p><ul><li>echo &lt; dev > > /etc/hostname</li><li>sed -i &lsquo;/en_US.UTF-8 UTF-8/s/^#//g&rsquo; /etc/locale.gen</li><li>echo LANG=en_us.UTF-8 > /etc/locale.conf</li><li>locale-gen</li></ul><h2 id=step-12>Step 12:</h2><p>(root&user setup)</p><ul><li>passwd # root password</li><li>useradd -m -G network,users,storage,lp,input,audio,wheel -s /bin/bash &lt; arch-user ></li><li>passwd arch-user</li></ul><h2 id=step-13>Step 13:</h2><p>(luks key)</p><ul><li>mkdir /root/.cryptlvm && chmod 700 /root/.cryptlvm</li><li>dd bs=512 count=4 if=/dev/random of=/root/.cryptlvm/archluks.bin iflag=fullblock</li><li>chmod 600 /root/.cryptlvm/archluks.bin</li><li>cryptsetup -v luksAddKey /dev/sda1 /root/.cryptlvm/archluks.bin</li><li>cryptsetup luksDump /dev/sda1 #luks key slot 0-1</li></ul><h2 id=step-14>Step 14:</h2><p>(TODO)</p><ul><li>vim /etc/mkinitcpio.conf<ul><li>FILES(/root/.cryptlvm/archluks.bin)</li><li>HOOKS(base udev autodetect modconf block encrypt lvm2 filesystems keyboard fsck)</li></ul></li><li>mkinitcpio -p linux</li></ul><h2 id=step-15>Step 15:</h2><p>(grub)</p><ul><li><p>UUID=$(blkid /dev/sda1 -s UUID -o value)</p></li><li><p>sed -i &ldquo;/^GRUB_CMDLINE_LINUX=/cGRUB_CMDLINE_LINUX="cryptdevice=UUID=${UUID}:enc-arch root=/dev/mapper/Arch-root cryptkey=rootfs:/root/.cryptlvm/archluks.bin"&rdquo; /etc/default/grub</p></li><li><p>sed -i &ldquo;/GRUB_ENABLE_CRYPTODISK=/cGRUB_ENABLE_CRYPTODISK=y&rdquo; /etc/default/grub</p></li><li><p>grub-install &ndash;target=i386-pc &ndash;bootloader-id=ArchLinux /dev/sda</p></li><li><p>grub-mkconfig -o /boot/grub/grub.cfg</p></li></ul><h2 id=step-16>Step 16:</h2><p>(base installation done, exit now)</p><ul><li>exit</li><li>umount -R /mnt</li><li>swapoff -a</li><li>reboot #unplug USB</li></ul><hr><h2 id=step-17>Step 17:</h2><p>(update system)</p><ul><li>#login as root</li><li>visudo<ul><li>%wheel ALL=(ALL:ALL) NOPASSWD: ALL #uncomment this line</li></ul></li><li>ping &lt; net > #test connection</li><li>pacman -Syu #update system</li><li>pacman -S linux-headers dkms</li></ul><h2 id=step-18>Step 18:</h2><p>(install gnome)</p><ul><li>pacman -S gnome</li><li>systemctl enable gdm #!&for user</li><li>systemctl enable NetworkManager</li><li>reboot</li></ul><h2 id=step-19>Step 19:</h2><p>(optional)</p><ul><li>pacman -Rns gnome-software gnome-maps gnome-books epiphany &mldr;</li><li>pacman -S chromium</li></ul><hr><p>&(Thanks to <a href=https://gist.github.com/huntrar>@huntrar</a> & <a href=https://gitlab.com/pad92>@pad92</a>)</p><ul><li><a href=https://wiki.archlinux.org/title/Installation_guide>https://wiki.archlinux.org/title/Installation_guide</a></li><li><a href=https://gist.github.com/huntrar/e42aee630bee3295b2c671d098c81268>https://gist.github.com/huntrar/e42aee630bee3295b2c671d098c81268</a></li><li><a href=https://gitlab.com/pad92/dotfiles/-/blob/master/archlinux/install.md>https://gitlab.com/pad92/dotfiles/-/blob/master/archlinux/install.md</a></li></ul></div><footer class=content__footer></footer></section><section class=page__aside><div class=aside__about><div class=aside__about><img class=about__logo src=https://solmazfs.github.io/blog/images/batFlap.gif alt=Logo><h1 class=about__title>~01/12/2021</h1><p class=about__description>I&rsquo;m working on my blog website.</p></div><ul class=aside__social-links></ul></div><hr><div class=aside__content><p>2021-11-29</p></div></section><footer class=page__footer><p class=copyright>solmazfs © 2021-2022 <a href=https://creativecommons.org/licenses/by-nc-sa/4.0/>BY-NC-SA 4.0</a></p></footer></div></body></html>
+<!doctype html><html><head><meta name=viewport content="width=device-width,initial-scale=1"><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css><title>blog.solmazfs &ndash; Arch Linux Installation (Legacy)</title><link rel=stylesheet href=https://solmazfs.github.io/blog/css/pub.css><link rel=stylesheet href=https://solmazfs.github.io/blog/css/screen.css><link rel=stylesheet href=https://solmazfs.github.io/blog/css/custom.css><link rel=stylesheet href=https://solmazfs.github.io/blog/css/syntax.css><style>th{font-weight:400}th,td{padding:0}code a{color:inherit;text-decoration:none}.tex,.latex{text-transform:uppercase}.tex>span,.latex>span{line-height:0;text-transform:uppercase}.latex>:first-child{margin-left:-.36em;margin-right:-.15em;vertical-align:.3em;font-size:70%}.tex>:last-child,.latex>:last-child{margin-left:-.1667em;margin-right:-.125em;vertical-align:-.5ex}.table-comments{width:auto;margin:auto;float:column-top;column-span:all}.table-comments th,.table-comments td{padding-left:2pt;padding-right:2pt}.table-comments th:nth-child(3),.table-comments td:nth-child(3){text-align:left}</style></head><body translate=no><header class="counter-skip header"><a href=https://solmazfs.github.io/blog><img alt=solmazfs src=https://solmazfs.github.io/blog/images/solmazfs.svg loading=lazy></a><nav><ul><li><a href=/blog/posts/>Posts</a></li><li><a href=/blog/categories/>Categories</a></li><li><a href=/blog/now/>Now</a></li></ul></nav></header><hr><main><aside class=counter-skip><cite>Arch Linux Installation (Legacy)</cite>
+<cite>Nov 29, 2021</cite>
+<cite>703 Words</cite>
+<cite>in progress</cite><br><br><p><i>"My ArchLinux installation steps."</i></p></aside><section class=counter-skip><blockquote><p>[Legacy] BIOS mode</p></blockquote><ol><li><a href=#step-1>Make Bootable USB</a></li><li><a href=#step-2>Wipe Disk</a></li><li><a href=#step-3>Disk partitioning</a></li><li><a href=#step-4>Encryption</a></li><li><a href=#step-5>Create Physical&Logical Volume(s)</a></li><li><a href=#step-6>Formatting&Mounting</a></li><li><a href=#step-7>Install base</a></li><li><a href=#step-8>Generate fstab</a></li><li><a href=#step-9>Enter new system</a></li><li><a href=#step-10>Timezone</a></li><li><a href=#step-11>Language</a></li><li><a href=#step-12>root&user setup</a></li><li><a href=#step-13>Luks key</a></li><li><a href=#step-14>TODO</a></li><li><a href=#step-15>Grub</a></li><li><a href=#step-16>Exit</a></li><li><a href=#step-17>Update System</a></li><li><a href=#step-18>Install Gnome</a></li><li><a href=#step-19>Optional</a></li></ol><h3 id=step-1>Step 1</h3><p>➥ (make bootable USB):</p><ul><li>Download iso: <a href=https://archlinux.org/download/>https://archlinux.org/download/</a></li><li>Burn <cite>archlinux-<em>version</em>-x86_64.iso</cite> file to a USB drive.</li></ul><blockquote><p>to do that;</p></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>lsblk
+</span></span><span class=line><span class=cl># find out name of USB --&gt; e.g. &#34;sdb&#34; !choose right one.
+</span></span><span class=line><span class=cl># Make sure USB drive is empty. This process destroy all data in sdb.
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>sudo dd bs=4M if=archlinux-*version-x86_64.iso of=/dev/&lt; sdX &gt; conv=fsync oflag=direct status=progress
+</span></span></code></pre></td></tr></table></div></div><ul><li>Setup BIOS for booting from USB & boot arch-linux</li></ul><h3 id=step-2>Step 2</h3><p>➥ (wipe disk):</p><blockquote><p>Before this step <mark>you may need backup your important files.</mark> This process will wipe out all data in your hard drive.</p></blockquote><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>lsblk
+</span></span><span class=line><span class=cl># find out name of HardDrive --&gt; e.g. &#34;sda&#34; !choose right one.
+</span></span><span class=line><span class=cl>DEVICE=&#34;/dev/sdX&#34;
+</span></span><span class=line><span class=cl>PASS=$(tr -cd &#39;[:alnum:]&#39; &lt; /dev/urandom | head -c128)
+</span></span><span class=line><span class=cl>openssl enc -aes-256-ctr -pass pass:&#34;$PASS&#34; -nosalt &lt; /dev/zero | dd obs=64K ibs=4K of=$DEVICE oflag=direct status=progress
+</span></span></code></pre></td></tr></table></div></div><h3 id=step-3>Step 3</h3><p>➥ (disk partitioning &ndash;> [legacy]):</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>cfdisk
+</span></span><span class=line><span class=cl>- !label type [dos]
+</span></span><span class=line><span class=cl>- new --&gt; [enter] --&gt; primary
+</span></span><span class=line><span class=cl>- bootable
+</span></span><span class=line><span class=cl>- write --&gt; type &lt; yes &gt;
+</span></span><span class=line><span class=cl>- quit
+</span></span><span class=line><span class=cl>lsblk
+</span></span><span class=line><span class=cl># e.g. sda, sda1
+</span></span></code></pre></td></tr></table></div></div><h3 id=step-4>Step 4</h3><p>➥ (encryption &ndash;> cryptsetup/luks):</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>cryptsetup luksFormat --type luks1 --use-random -S 1 -s 512 -h sha512 /dev/&lt; sdX1 &gt;
+</span></span><span class=line><span class=cl>- type &lt; YES &gt; --&gt; enter pass
+</span></span><span class=line><span class=cl>cryptsetup luksOpen /dev/sda1 &lt; enc-arch &gt;
+</span></span></code></pre></td></tr></table></div></div><h3 id=step-5>Step 5</h3><p>➥ (create physical&logical volume(s)):</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>pvcreate /dev/mapper/&lt; enc-arch &gt;
+</span></span><span class=line><span class=cl>vgcreate &lt; Arch &gt; /dev/mapper/&lt; enc-arch &gt;
+</span></span><span class=line><span class=cl>lvcreate -L &lt; 3G &gt; &lt; Arch &gt; -n swap # !for 3gb ram
+</span></span><span class=line><span class=cl>lvcreate -L &lt; 32G &gt; &lt; Arch &gt; -n root # !32|50 GB should be enough
+</span></span><span class=line><span class=cl>lvcreate -l 100%FREE &lt; Arch &gt; -n home
+</span></span></code></pre></td></tr></table></div></div><h3 id=step-6>Step 6</h3><p>➥ (formatting&mounting):</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>mkswap /dev/mapper/&lt; Arch &gt;-swap
+</span></span><span class=line><span class=cl>mkfs.ext4 /dev/mapper/&lt; Arch &gt;-root
+</span></span><span class=line><span class=cl>mkfs.ext4 /dev/mapper/&lt; Arch &gt;-home
+</span></span><span class=line><span class=cl>mount /dev/mapper/&lt; Arch &gt;-root /mnt
+</span></span><span class=line><span class=cl>mkdir /mnt/home
+</span></span><span class=line><span class=cl>mount /dev/mapper/&lt; Arch &gt;-home /mnt/home
+</span></span><span class=line><span class=cl>swapon /dev/mapper/&lt; Arch &gt;-swap
+</span></span><span class=line><span class=cl>mkdir /mnt/boot
+</span></span></code></pre></td></tr></table></div></div><h3 id=step-7>Step 7</h3><p>➥ (install base):</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>pacstrap /mnt base base-devel linux linux-firmware linux-headers mkinitcpio networkmanager wpa_supplicant dialog dhcpcd lvm2  vim terminus-font grub
+</span></span></code></pre></td></tr></table></div></div><h3 id=step-8>Step 8</h3><p>➥ (create fstab):</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
+</span></span><span class=line><span class=cl>cat /mnt/etc/fstab
+</span></span></code></pre></td></tr></table></div></div><h3 id=step-9>Step 9</h3><p>➥ (enter new system chroot):</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>arch-chroot /mnt
+</span></span></code></pre></td></tr></table></div></div><h3 id=step-10>Step 10</h3><p>➥ (timezone):</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>timedatectl set-timezone &#34;$(curl -s --fail https://ipapi.co/timezone)&#34;
+</span></span><span class=line><span class=cl>timedatectl set-ntp true
+</span></span><span class=line><span class=cl>hwclock --systohc --utc
+</span></span></code></pre></td></tr></table></div></div><h3 id=step-11>Step 11</h3><p>➥ (language):</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>echo &lt; dev &gt; &gt; /etc/hostname
+</span></span><span class=line><span class=cl>sed -i &#39;/en_US.UTF-8 UTF-8/s/^#//g&#39; /etc/locale.gen
+</span></span><span class=line><span class=cl>echo LANG=en_us.UTF-8 &gt; /etc/locale.conf
+</span></span><span class=line><span class=cl>locale-gen
+</span></span></code></pre></td></tr></table></div></div><h3 id=step-12>Step 12</h3><p>➥ (root&user setup):</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>passwd
+</span></span><span class=line><span class=cl># root password
+</span></span><span class=line><span class=cl>useradd -m -G network,users,storage,lp,input,audio,wheel -s /bin/bash &lt; arch-user &gt;
+</span></span><span class=line><span class=cl>passwd &lt; arch-user &gt;
+</span></span></code></pre></td></tr></table></div></div><h3 id=step-13>Step 13</h3><p>➥ (luks key):</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>mkdir /root/&lt; .cryptlvm &gt; &amp;&amp; chmod 700 /root/&lt; .cryptlvm &gt;
+</span></span><span class=line><span class=cl>dd bs=512 count=4 if=/dev/random of=/root/&lt; .cryptlvm &gt;/&lt; archluks &gt;.bin iflag=fullblock
+</span></span><span class=line><span class=cl>chmod 600 /root/&lt; .cryptlvm &gt;/&lt; archluks &gt;.bin
+</span></span><span class=line><span class=cl>cryptsetup -v luksAddKey /dev/sda1 /root/&lt; .cryptlvm &gt;/&lt; archluks &gt;.bin
+</span></span><span class=line><span class=cl>cryptsetup luksDump /dev/sda1 #luks key slot 0-1
+</span></span></code></pre></td></tr></table></div></div><h3 id=step-14>Step 14</h3><p>➥ (TODO):</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>vim /etc/mkinitcpio.conf
+</span></span><span class=line><span class=cl>    FILES(/root/&lt; .cryptlvm &gt;/&lt; archluks &gt;.bin)
+</span></span><span class=line><span class=cl>    HOOKS(base udev autodetect modconf block encrypt lvm2 filesystems keyboard fsck)
+</span></span><span class=line><span class=cl>mkinitcpio -p linux
+</span></span></code></pre></td></tr></table></div></div><h3 id=step-15>Step 15</h3><p>➥ (grub):</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>UUID=$(blkid /dev/&lt; sdX1 &gt; -s UUID -o value)
+</span></span><span class=line><span class=cl>sed -i &#34;/^GRUB_CMDLINE_LINUX=/cGRUB_CMDLINE_LINUX=\&#34;cryptdevice=UUID=${UUID}:&lt; enc-arch &gt; root=/dev/mapper/&lt; Arch &gt;-root cryptkey=rootfs:/root/&lt; .cryptlvm &gt;/&lt; archluks &gt;.bin\&#34;&#34;  /etc/default/grub
+</span></span><span class=line><span class=cl>sed -i &#34;/GRUB_ENABLE_CRYPTODISK=/cGRUB_ENABLE_CRYPTODISK=y&#34; /etc/default/grub
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>grub-install --target=i386-pc --bootloader-id=ArchLinux /dev/&lt; sdX &gt;
+</span></span><span class=line><span class=cl>grub-mkconfig -o /boot/grub/grub.cfg
+</span></span></code></pre></td></tr></table></div></div><h3 id=step-16>Step 16</h3><p>➥ (base installation done, exit now):</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>exit
+</span></span><span class=line><span class=cl>umount -R /mnt
+</span></span><span class=line><span class=cl>swapoff -a
+</span></span><span class=line><span class=cl>reboot
+</span></span><span class=line><span class=cl>#unplug USB
+</span></span></code></pre></td></tr></table></div></div><h3 id=step-17>Step 17</h3><p>➥ (update system):</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>#login as root
+</span></span><span class=line><span class=cl>visudo
+</span></span><span class=line><span class=cl>    %wheel ALL=(ALL:ALL) NOPASSWD: ALL #uncomment this line
+</span></span><span class=line><span class=cl>ping &lt; network addr &gt; #test connection
+</span></span><span class=line><span class=cl>pacman -Syu #update system
+</span></span><span class=line><span class=cl>pacman -S linux-headers dkms
+</span></span></code></pre></td></tr></table></div></div><h3 id=step-18>Step 18</h3><p>➥ (install gnome):</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>pacman -S gnome
+</span></span><span class=line><span class=cl>systemctl enable gdm #!&amp;for user
+</span></span><span class=line><span class=cl>systemctl enable NetworkManager
+</span></span><span class=line><span class=cl>reboot
+</span></span></code></pre></td></tr></table></div></div><h3 id=step-19>Step 19</h3><p>➥ (optional):</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>pacman -Rns gnome-software gnome-maps gnome-books epiphany ...
+</span></span><span class=line><span class=cl>pacman -S chromium
+</span></span></code></pre></td></tr></table></div></div><p>&(Thanks to <a href=https://gist.github.com/huntrar>@huntrar</a> & <a href=https://gitlab.com/pad92>@pad92</a>)</p><p>[1] <a href=https://wiki.archlinux.org/title/Installation_guide>https://wiki.archlinux.org/title/Installation_guide</a><br>[2] <a href=https://gist.github.com/huntrar/e42aee630bee3295b2c671d098c81268>https://gist.github.com/huntrar/e42aee630bee3295b2c671d098c81268</a><br>[3] <a href=https://gitlab.com/pad92/dotfiles/-/blob/master/archlinux/install.md>https://gitlab.com/pad92/dotfiles/-/blob/master/archlinux/install.md</a></p></section></main><footer><p>solmazfs © 2021-2022 <a href=https://creativecommons.org/licenses/by-nc-sa/4.0/>BY-NC-SA 4.0</a></p></footer></body></html>
