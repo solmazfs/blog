@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>linux on blog.solmazfs</title><link>https://solmazfs.github.io/blog/tags/linux/</link><description>Recent content in linux on blog.solmazfs</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>© 2021-2022</copyright><lastBuildDate>Fri, 08 Apr 2022 13:53:58 +0300</lastBuildDate><atom:link href="https://solmazfs.github.io/blog/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Command Line General (Linux)</title><link>https://solmazfs.github.io/blog/posts/command-line-general/</link><pubDate>Fri, 08 Apr 2022 13:53:58 +0300</pubDate><guid>https://solmazfs.github.io/blog/posts/command-line-general/</guid><description>imagemagick didder ffmpeg imagemagick Resize image.
-1 convert -resize 50% input.png output.png Add border to an image.
-1 convert -bordercolor white -border 3 -bordercolor black -border 86 input.png output.png didder Image dithering.
-1 didder --palette &amp;#39;black white&amp;#39; -i input.png -o output.png bayer 16x16 ffmpeg Cut specific timeline from video.
-1 2 3 ffmpeg -ss &amp;lt; starting point &amp;gt; -i &amp;lt; input &amp;gt; -t &amp;lt; how long &amp;gt; -vcodec copy -acodec copy &amp;lt; output &amp;gt; #e.</description></item></channel></rss>
+convert -resize 50% input.png output.png Add border to an image.
+convert -bordercolor white -border 3 -bordercolor black -border 86 input.png output.png didder Image dithering.
+didder --palette &amp;#39;black white&amp;#39; -i input.png -o output.png bayer 16x16 ffmpeg Cut specific timeline from video.
+ffmpeg -ss &amp;lt; starting point &amp;gt; -i &amp;lt; input &amp;gt; -t &amp;lt; how long &amp;gt; -vcodec copy -acodec copy &amp;lt; output &amp;gt; #e.</description></item></channel></rss>
