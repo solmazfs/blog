@@ -1,22 +1,13 @@
 baseURL = 'https://solmazfs.github.io/blog'
+canonifyURLs = true
 languageCode = 'en-us'
 copyright = '© 2021-2022'
 title = 'blog.solmazfs'
 enableEmoji = true
+enableGitInfo = true
+
 [author]
     name = 'solmazfs'
-
-[params]
-
-[params.theme]
-    palette = "cyberpunk"
-    mode = "dark-mode"
-
-# Sidebar: about/bio
-[params.about]
-    logo = "images/batFlap.gif"
-    title = "~01/12/2021"
-    description = "I'm working on my blog website."
 
 [menu]
 
@@ -41,6 +32,7 @@ enableEmoji = true
 [taxonomies]
     category = 'categories'
     tag = 'tags'
+
 [markup]
     [markup.goldmark]
         [markup.goldmark.renderer]
@@ -54,3 +46,6 @@ enableEmoji = true
     lineNoStart = 1
     tabWidth = 4
     noClasses = false
+
+[frontmatter]
+    lastmod = [ "lastmod", ":git", "date", "publishDate" ]

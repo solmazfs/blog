@@ -91,9 +91,17 @@ mark {
 
 }
 
-main img {
+#main-img {
+    display:block;
     width:100%;
+    max-width:100%;
     height:auto;
+}
+
+section > img {
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 

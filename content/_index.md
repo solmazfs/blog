@@ -5,7 +5,7 @@ author : "solmazfs"
 
 Latest projects: -
 
-<img src="images/red.png" loading="lazy"/> 
+<img id="main-img" src="images/red.png" loading="lazy"/> 
 
 Currently reading: **Hiçten Az**, Slavoj Žižek. See other [readings](books).
 

@@ -1,7 +1,8 @@
 {{ define "main" }}
 <aside class="counter-skip">
+    {{ $date := .Date.Format "Jan 2, 2006" }}
     <cite>{{ .Title }}</cite>
-    <cite> {{ .Date.Format "Jan 02, 2006" }} </cite>
+    <cite>{{ $date }}</cite>
     <cite> {{ .Params.Ready }} </cite>
     <br>
     <br>
