@@ -3,7 +3,7 @@ title: "Bitmap Font (GODOT)"
 date: 2022-04-08T13:47:04+03:00
 categories: ["game-dev"]
 tags: [godot,game-dev]
-description: "Let's make our custom designed font for using our game."
+description: "Let's make our font specially designed for use in our game."
 ready: "in progress"
 draft: false
 ---
