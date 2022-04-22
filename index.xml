@@ -4,11 +4,17 @@ My application was accepted but I could not take the exam.
 28.03.2022, YÖKDİL(Sos.Bil.) exam result ↠ 65
 This exam was not as easy as i expected, so i need to concentrate more on advanced vocabulary studies.
 07.12.2021, ALES(SÖZ) exam result ↠ 72.8
-Finally, finally! I&amp;rsquo;ve just pass this exam.</description></item><item><title>Command Line General (Linux)</title><link>https://solmazfs.github.io/blog/posts/command-line-general/</link><pubDate>Fri, 08 Apr 2022 13:53:58 +0300</pubDate><guid>https://solmazfs.github.io/blog/posts/command-line-general/</guid><description>imagemagick didder ffmpeg imagemagick Resize image.
-convert -resize 50% input.png output.png Add border to an image.
-convert -bordercolor white -border 3 -bordercolor black -border 86 input.png output.png didder Image dithering.
-didder --palette &amp;#39;black white&amp;#39; -i input.png -o output.png bayer 16x16 ffmpeg Cut specific timeline from video.
-ffmpeg -ss &amp;lt; starting point &amp;gt; -i &amp;lt; input &amp;gt; -t &amp;lt; how long &amp;gt; -vcodec copy -acodec copy &amp;lt; output &amp;gt; #e.</description></item><item><title>Bitmap Font (GODOT)</title><link>https://solmazfs.github.io/blog/posts/bitmap-font/</link><pubDate>Fri, 08 Apr 2022 13:47:04 +0300</pubDate><guid>https://solmazfs.github.io/blog/posts/bitmap-font/</guid><description/></item><item><title>YÖKDİL Genel Notlar</title><link>https://solmazfs.github.io/blog/posts/yokdil/</link><pubDate>Fri, 08 Apr 2022 00:00:00 +0000</pubDate><guid>https://solmazfs.github.io/blog/posts/yokdil/</guid><description>@ydstime @remzihoca</description></item><item><title>Music</title><link>https://solmazfs.github.io/blog/music/</link><pubDate>Thu, 07 Apr 2022 14:05:05 +0300</pubDate><guid>https://solmazfs.github.io/blog/music/</guid><description>➥ aliceffekt
+Finally, finally! I&amp;rsquo;ve just pass this exam.</description></item><item><title>Command Line General (Linux)</title><link>https://solmazfs.github.io/blog/posts/command-line-general/</link><pubDate>Fri, 08 Apr 2022 13:53:58 +0300</pubDate><guid>https://solmazfs.github.io/blog/posts/command-line-general/</guid><description>imagemagick didder ffmpeg other imagemagick Resize image;
+convert -resize 50% input.png output.png Add border to an image;
+convert -bordercolor white -border 3 -bordercolor black -border 86 input.png output.png didder Image dithering;
+didder --palette &amp;#39;black white&amp;#39; -i input.png -o output.png bayer 16x16 ffmpeg Cut specific timeline from video;
+ffmpeg -ss &amp;lt; starting point &amp;gt; -i &amp;lt; input &amp;gt; -t &amp;lt; how long &amp;gt; -vcodec copy -acodec copy &amp;lt; output &amp;gt; #e.</description></item><item><title>Bitmap Font (GODOT)</title><link>https://solmazfs.github.io/blog/posts/bitmap-font/</link><pubDate>Fri, 08 Apr 2022 13:47:04 +0300</pubDate><guid>https://solmazfs.github.io/blog/posts/bitmap-font/</guid><description>drawing part [libresprite] Create 110x50 canvas
+pick color palette in presets menu, e.g Nes
+fill background a bit bright color e.g. #92d3ff
+make 8x8 square for each letter, number and character etc. and fill darker color e.g. #2000b2
+we are ready to draw some letters on it
+you can download it here
+godot part extends Node2D # font texture const FONT_TEXTURE:Texture = preload(&amp;#34;res://bitmap-font.png&amp;#34;) # texture size const T_SIZE = {w=110,h=50} # project window size const WIND = {w=128,h=128} export(bool) var drw_grid = false onready var bitmap_font:BitmapFont = BitmapFont.</description></item><item><title>YÖKDİL Genel Notlar</title><link>https://solmazfs.github.io/blog/posts/yokdil/</link><pubDate>Fri, 08 Apr 2022 00:00:00 +0000</pubDate><guid>https://solmazfs.github.io/blog/posts/yokdil/</guid><description>@ydstime @remzihoca</description></item><item><title>Music</title><link>https://solmazfs.github.io/blog/music/</link><pubDate>Thu, 07 Apr 2022 14:05:05 +0300</pubDate><guid>https://solmazfs.github.io/blog/music/</guid><description>➥ aliceffekt
 Dei Dain by aliceffekt OST shire_music · ArchLord. 03. Del Paras Katana ZERO (Original Soundtrack) by LudoWic Axiom Verge Soundtrack by Thomas Happ black/metal ➥ Vermilia
 Täällä Pohjantähden Alla by Vermilia ➥ Metalhead (soundtrack)
 METALHEAD by Petur Ben ➥ NARGAROTH
