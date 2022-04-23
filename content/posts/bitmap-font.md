@@ -11,7 +11,7 @@ draft: false
 In this guide we'll learn how to use our custom designed font image for our game.
 ### drawing font [libresprite]
 In this part, we will draw the characters needed for only "HELLO WORLD!".
-In future, you can draw the required characters for your project with the similar logic.<small>[[1]](#ref1)</small>
+In future, you can draw the required characters for your project with the similar logic.<small>[[1]]({{< ref "#ref1" >}})</small>
 - Create <cite>90x10</cite> canvas.
 - Fill the background with <cite>#ff00ff</cite> color.
 - Create a new layer and draw a total of 9 8x8 pixel squares.
@@ -28,7 +28,6 @@ This is how it looks after finished;
 > - Replacing blue color with alpha.
 
 
-
 ### godot engine
 
 - Project Settings.
@@ -43,7 +42,7 @@ This is how it looks after finished;
 - Setup scene.
     - Create Node2D and attach script to it.
 
-Less code, efficient but with *Control* node <cite>Label</cite>.<small>[[2]](#ref2)[[3]](#ref3)</small>
+Less code, efficient but with *Control* node <cite>Label</cite>.<small>[[2]]({{< ref "#ref2" >}})</small><small>[[3]]({{< ref "#ref3" >}})</small>
 ```text
 extends Node2D
 
@@ -137,11 +136,8 @@ Final result;
 <br/>
 
 ### References
-
-<span id="ref1">[1]</span> For further reference you may want to look some NES bitmap fonts.
-
-<span id="ref2">[2]</span> From @bruvzg's answer: [https://godotengine.org/qa/89563/how-do-i-load-a-hand-made-bitmap-font-into-godot-as-bitmapfont](https://godotengine.org/qa/89563/how-do-i-load-a-hand-made-bitmap-font-into-godot-as-bitmapfont)
-
-<span id="ref3">[3]</span> Godot Doc.: [https://docs.godotengine.org/en/stable/classes/class_bitmapfont.html](https://docs.godotengine.org/en/stable/classes/class_bitmapfont.html)
+<ref id="ref1"> For further reference you may want to look some NES bitmap fonts.</ref>
+<ref id="ref2"> From @bruvzg's answer: [https://godotengine.org/qa/89563/how-do-i-load-a-hand-made-bitmap-font-into-godot-as-bitmapfont](https://godotengine.org/qa/89563/how-do-i-load-a-hand-made-bitmap-font-into-godot-as-bitmapfont)</ref>
+<ref id="ref3"> Godot Docs: [https://docs.godotengine.org/en/stable/classes/class_bitmapfont.html](https://docs.godotengine.org/en/stable/classes/class_bitmapfont.html)</ref>
 <br/>
 <br/>
