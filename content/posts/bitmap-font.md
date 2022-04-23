@@ -41,7 +41,33 @@ This is how it looks after finished;
     - Presets <cite>2d pixel</cite> > Reimport
 
 - Setup scene.
-    - Create Node2D and attach script
+    - Create Node2D and attach script to it.
+
+Less code, efficient but with *Control* node <cite>Label</cite>.<small>[[2]](#ref2)[[3]](#ref3)</small>
+```text
+extends Node2D
+
+func _ready() -> void:
+    bitmap_font()
+
+func bitmap_font() -> void:
+    var font:= BitmapFont.new()
+    var texture:= preload("res://spr/bitmap-font.png")
+    var chars:= "dehlorw! "
+    var c:= 1  # 1px corner space
+    var j:= 10 # jump for next, 8+2px space
+    var wh:= 8 # chars width and height
+    font.add_texture(texture)
+    for i in range(0,chars.length()):
+        font.add_char(chars.ord_at(i),0,Rect2(Vector2(i*j+c,c),Vector2(wh,wh)),Vector2.ZERO,wh)
+    $CanvasLayer/Label.add_font_override("font",font)
+```
+
+Final result;
+
+<img alt="folder" src="/images/game-dev/final-1.png" width="300px" loading="lazy"/>
+
+Without Control node but a bit messy.
 
 > variables
 ```text
@@ -105,9 +131,17 @@ func _draw() -> void:
 
 Final result;
 
-<img alt="folder" src="/images/game-dev/final.png" width="300px" loading="lazy"/>
+<img alt="folder" src="/images/game-dev/final-2.png" width="300px" loading="lazy"/>
 
 <br/>
+<br/>
+
+### References
+
 <span id="ref1">[1]</span> For further reference you may want to look some NES bitmap fonts.
+
+<span id="ref2">[2]</span> From @bruvzg's answer: [https://godotengine.org/qa/89563/how-do-i-load-a-hand-made-bitmap-font-into-godot-as-bitmapfont](https://godotengine.org/qa/89563/how-do-i-load-a-hand-made-bitmap-font-into-godot-as-bitmapfont)
+
+<span id="ref3">[3]</span> Godot Doc.: [https://docs.godotengine.org/en/stable/classes/class_bitmapfont.html](https://docs.godotengine.org/en/stable/classes/class_bitmapfont.html)
 <br/>
 <br/>
