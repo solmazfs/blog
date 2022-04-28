@@ -6,9 +6,12 @@
         <h3>{{ $key }}</h3>
         {{ range $value.Pages }}
         
-        <div style="margin-left:12px;">
-        <span>{{ .Date.Format "Jan 01, 2006" }}</span> <span>::</span><span><a href="{{ .Permalink }}">{{ .Title }}</a></span>
-        </div>
+        <ul>
+            <li style="line-height:6px;">
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+                <span style="float:right;">{{ .Date.Format "Jan 01, 2006" }}</span>
+            </li>
+        </ul>
         {{ end }}
       {{ end }}
     {{ end }}

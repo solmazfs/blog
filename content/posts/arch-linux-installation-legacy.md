@@ -214,6 +214,7 @@ pacman -S chromium
 
 &(Thanks to [@huntrar](https://gist.github.com/huntrar) & [@pad92](https://gitlab.com/pad92))
 
-[1] https://wiki.archlinux.org/title/Installation_guide\
-[2] https://gist.github.com/huntrar/e42aee630bee3295b2c671d098c81268\
-[3] https://gitlab.com/pad92/dotfiles/-/blob/master/archlinux/install.md
+### References
+<ref>https://wiki.archlinux.org/title/Installation_guide</ref>
+<ref>https://gist.github.com/huntrar/e42aee630bee3295b2c671d098c81268</ref>
+<ref>https://gitlab.com/pad92/dotfiles/-/blob/master/archlinux/install.md</ref>

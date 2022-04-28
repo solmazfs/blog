@@ -3,13 +3,15 @@
         <h3>{{ .Title | markdownify }}</h3>
         {{ .Content }}
     {{ range .Pages }}
-    <div style="margin-left:12px;">
-        <span>{{ .Date.Format "Jan 01, 2006" }} :: </span>
-        <a href="{{ .Permalink }}">{{ .Title | markdownify | safeHTML | truncate 30 }}</a>
-        <span>@</span>
-        <span>{ {{ range $i, $e := .Params.tags }}{{- if $i -}}, {{ end -}} <span style="color:gray;">{{ . }}</span>{{ end }} }</span>
+    <ul>
+        <li style="line-height:6px;">
+            <a href="{{ .Permalink }}">{{ .Title | markdownify | safeHTML | truncate 30 }}</a>
+            <span>@</span>
+            <span>{ {{ range $i, $e := .Params.tags }}{{- if $i -}}, {{ end -}} <span style="color:gray;">{{ . }}</span>{{ end }} }</span>
+            <span style="float:right;">{{ .Date.Format "Jan 01, 2006" }}</span>
+        </li>
     
-    </div>
+    </ul>
     {{ end }}
     </aside>
 {{ end }}
