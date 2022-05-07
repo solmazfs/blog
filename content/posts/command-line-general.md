@@ -50,6 +50,21 @@ Convert mp4 to mp3;
 ffmpeg -i input.mp4 -vn -acodec libmp3lame -ac 2 -ab 160k -ar 48000 output.mp3
 ```
 
+Convert webm to mp4;
+```text
+ffmpeg -fflags +genpts -i input.webm -r 24 output.mp4
+```
+
+Decrease music volume;
+```text
+ffmpeg -i input.mp3 -filter:a "volume=0.2" -c:a pcm_f32le output.wav
+```
+
+Add music for a video;
+```text
+ffmpeg -i input.mp4 -i input.wav -map 0:v -map 1:a -c:v copy -shortest output.mp4
+```
+
 ### other 
 sync two files;
 ```text
