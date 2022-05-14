@@ -4,11 +4,11 @@
         {{ .Content }}
     {{ range .Pages }}
     <ul>
-        <li style="line-height:6px;">
+        <li>
             <a href="{{ .Permalink }}">{{ .Title | markdownify | safeHTML | truncate 30 }}</a>
-            <span>@</span>
-            <span>{ {{ range $i, $e := .Params.tags }}{{- if $i -}}, {{ end -}} <span style="color:gray;">{{ . }}</span>{{ end }} }</span>
-            <span style="float:right;">{{ .Date.Format "Jan 01, 2006" }}</span>
+            <span>Γ</span>
+            <span>{ {{ range $i, $e := .Params.tags }}{{- if $i -}}, {{ end -}}<span style="color:gray;">{{ . }}</span>{{ end }} }</span>
+            <span class="post-date">{{ .Date.Format "Jan 01, 2006" }}</span>
         </li>
     
     </ul>
