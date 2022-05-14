@@ -74,7 +74,7 @@ lsblk
 ```text
 cryptsetup luksFormat --type luks1 --use-random -S 1 -s 512 -h sha512 /dev/< sdX1 >
 - type < YES > --> enter pass
-cryptsetup luksOpen /dev/sda1 < enc-arch >
+cryptsetup open /dev/sda1 < enc-arch >
 ```
 
 ### Step 5
@@ -132,7 +132,7 @@ hwclock --systohc --utc
 ```text
 echo < dev > > /etc/hostname
 sed -i '/en_US.UTF-8 UTF-8/s/^#//g' /etc/locale.gen
-echo LANG=en_us.UTF-8 > /etc/locale.conf
+echo LANG=en_US.UTF-8 > /etc/locale.conf
 locale-gen
 ```
 
@@ -189,19 +189,22 @@ reboot
 ➥ (update system):
 ```text
 #login as root
-visudo
+vim /etc/sudoers
     %wheel ALL=(ALL:ALL) NOPASSWD: ALL #uncomment this line
+systemctl enable NetworkManager
 ping < network addr > #test connection
 pacman -Syu #update system
 pacman -S linux-headers dkms
+exit
 ```
 
 ### Step 18
 ➥ (install gnome):
 ```text
+#login as user
 pacman -S gnome
-systemctl enable gdm #!&for user
-systemctl enable NetworkManager
+sudo systemctl enable gdm
+sudo systemctl enable NetworkManager
 reboot
 ```
 
