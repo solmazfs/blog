@@ -3,7 +3,7 @@ title: "home"
 author : "solmazfs"
 ---
 
-Latest projects: -
+Latest projects: (Webdesign, artwork gallery themes. *in progress*)
 
 <img id="main-img" src="images/red.png" loading="lazy"/> 
 
