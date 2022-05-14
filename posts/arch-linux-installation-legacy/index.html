@@ -1,6 +1,6 @@
 <!doctype html><html><head><meta name=viewport content="width=device-width,initial-scale=1"><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css><title>blog.solmazfs &ndash; Arch Linux Installation (Legacy)</title><link rel=stylesheet href=https://solmazfs.github.io/blog/css/pub.css><link rel=stylesheet href=https://solmazfs.github.io/blog/css/screen.css><link rel=stylesheet href=https://solmazfs.github.io/blog/css/custom.css><link rel=stylesheet href=https://solmazfs.github.io/blog/css/syntax.css><style>th{font-weight:400}th,td{padding:0}code a{color:inherit;text-decoration:none}.tex,.latex{text-transform:uppercase}.tex>span,.latex>span{line-height:0;text-transform:uppercase}.latex>:first-child{margin-left:-.36em;margin-right:-.15em;vertical-align:.3em;font-size:70%}.tex>:last-child,.latex>:last-child{margin-left:-.1667em;margin-right:-.125em;vertical-align:-.5ex}.table-comments{width:auto;margin:auto;float:column-top;column-span:all}.table-comments th,.table-comments td{padding-left:2pt;padding-right:2pt}.table-comments th:nth-child(3),.table-comments td:nth-child(3){text-align:left}</style></head><body translate=no><header class="counter-skip header"><a href=https://solmazfs.github.io/blog><img alt=solmazfs src=https://solmazfs.github.io/blog/images/solmazfs.svg loading=lazy></a><nav><ul><li><a href=https://solmazfs.github.io/blog/posts/>Posts</a></li><li><a href=https://solmazfs.github.io/blog/categories/>Categories</a></li><li><a href=https://solmazfs.github.io/blog/now/>Now</a></li></ul></nav></header><hr><main><aside class=counter-skip><cite>Arch Linux Installation (Legacy)</cite>
 <cite>Nov 29, 2021</cite>
-<cite>620 Words</cite>
+<cite>628 Words</cite>
 <cite>in progress</cite><br><br><p><i>"My ArchLinux installation steps."</i></p></aside><section class=counter-skip><blockquote><p>[Legacy] BIOS mode</p></blockquote><ol><li><a href=#step-1>Make Bootable USB</a></li><li><a href=#step-2>Wipe Disk</a></li><li><a href=#step-3>Disk partitioning</a></li><li><a href=#step-4>Encryption</a></li><li><a href=#step-5>Create Physical&Logical Volume(s)</a></li><li><a href=#step-6>Formatting&Mounting</a></li><li><a href=#step-7>Install base</a></li><li><a href=#step-8>Generate fstab</a></li><li><a href=#step-9>Enter new system</a></li><li><a href=#step-10>Timezone</a></li><li><a href=#step-11>Language</a></li><li><a href=#step-12>root&user setup</a></li><li><a href=#step-13>Luks key</a></li><li><a href=#step-14>TODO</a></li><li><a href=#step-15>Grub</a></li><li><a href=#step-16>Exit</a></li><li><a href=#step-17>Update System</a></li><li><a href=#step-18>Install Gnome</a></li><li><a href=#step-19>Optional</a></li></ol><h3 id=step-1>Step 1</h3><p>➥ (make bootable USB):</p><ul><li>Download iso: <a href=https://archlinux.org/download/>https://archlinux.org/download/</a></li><li>Burn <cite>archlinux-<em>version</em>-x86_64.iso</cite> file to a USB drive.</li></ul><blockquote><p>to do that;</p></blockquote><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>lsblk
 </span></span><span class=line><span class=cl># find out name of USB --&gt; e.g. &#34;sdb&#34; !choose right one.
 </span></span><span class=line><span class=cl># Make sure USB drive is empty. This process destroy all data in sdb.
@@ -21,7 +21,7 @@
 </span></span><span class=line><span class=cl># e.g. sda, sda1
 </span></span></code></pre></div><h3 id=step-4>Step 4</h3><p>➥ (encryption &ndash;> cryptsetup/luks):</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>cryptsetup luksFormat --type luks1 --use-random -S 1 -s 512 -h sha512 /dev/&lt; sdX1 &gt;
 </span></span><span class=line><span class=cl>- type &lt; YES &gt; --&gt; enter pass
-</span></span><span class=line><span class=cl>cryptsetup luksOpen /dev/sda1 &lt; enc-arch &gt;
+</span></span><span class=line><span class=cl>cryptsetup open /dev/sda1 &lt; enc-arch &gt;
 </span></span></code></pre></div><h3 id=step-5>Step 5</h3><p>➥ (create physical&logical volume(s)):</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>pvcreate /dev/mapper/&lt; enc-arch &gt;
 </span></span><span class=line><span class=cl>vgcreate &lt; Arch &gt; /dev/mapper/&lt; enc-arch &gt;
 </span></span><span class=line><span class=cl>lvcreate -L &lt; 3G &gt; &lt; Arch &gt; -n swap # !for 3gb ram
@@ -44,7 +44,7 @@
 </span></span><span class=line><span class=cl>hwclock --systohc --utc
 </span></span></code></pre></div><h3 id=step-11>Step 11</h3><p>➥ (language):</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>echo &lt; dev &gt; &gt; /etc/hostname
 </span></span><span class=line><span class=cl>sed -i &#39;/en_US.UTF-8 UTF-8/s/^#//g&#39; /etc/locale.gen
-</span></span><span class=line><span class=cl>echo LANG=en_us.UTF-8 &gt; /etc/locale.conf
+</span></span><span class=line><span class=cl>echo LANG=en_US.UTF-8 &gt; /etc/locale.conf
 </span></span><span class=line><span class=cl>locale-gen
 </span></span></code></pre></div><h3 id=step-12>Step 12</h3><p>➥ (root&user setup):</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>passwd
 </span></span><span class=line><span class=cl># root password
@@ -71,18 +71,21 @@
 </span></span><span class=line><span class=cl>reboot
 </span></span><span class=line><span class=cl>#unplug USB
 </span></span></code></pre></div><h3 id=step-17>Step 17</h3><p>➥ (update system):</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>#login as root
-</span></span><span class=line><span class=cl>visudo
+</span></span><span class=line><span class=cl>vim /etc/sudoers
 </span></span><span class=line><span class=cl>    %wheel ALL=(ALL:ALL) NOPASSWD: ALL #uncomment this line
+</span></span><span class=line><span class=cl>systemctl enable NetworkManager
 </span></span><span class=line><span class=cl>ping &lt; network addr &gt; #test connection
 </span></span><span class=line><span class=cl>pacman -Syu #update system
 </span></span><span class=line><span class=cl>pacman -S linux-headers dkms
-</span></span></code></pre></div><h3 id=step-18>Step 18</h3><p>➥ (install gnome):</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>pacman -S gnome
-</span></span><span class=line><span class=cl>systemctl enable gdm #!&amp;for user
-</span></span><span class=line><span class=cl>systemctl enable NetworkManager
+</span></span><span class=line><span class=cl>exit
+</span></span></code></pre></div><h3 id=step-18>Step 18</h3><p>➥ (install gnome):</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>#login as user
+</span></span><span class=line><span class=cl>pacman -S gnome
+</span></span><span class=line><span class=cl>sudo systemctl enable gdm
+</span></span><span class=line><span class=cl>sudo systemctl enable NetworkManager
 </span></span><span class=line><span class=cl>reboot
 </span></span></code></pre></div><h3 id=step-19>Step 19</h3><p>➥ (optional):</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>pacman -Rns gnome-software gnome-maps gnome-books epiphany ...
 </span></span><span class=line><span class=cl>pacman -S chromium
 </span></span></code></pre></div><p>&(Thanks to <a href=https://gist.github.com/huntrar>@huntrar</a> & <a href=https://gitlab.com/pad92>@pad92</a>)</p><h3 id=references>References</h3><p><ref><a href=https://wiki.archlinux.org/title/Installation_guide>https://wiki.archlinux.org/title/Installation_guide</a></ref>
 <ref><a href=https://gist.github.com/huntrar/e42aee630bee3295b2c671d098c81268>https://gist.github.com/huntrar/e42aee630bee3295b2c671d098c81268</a></ref>
-<ref><a href=https://gitlab.com/pad92/dotfiles/-/blob/master/archlinux/install.md>https://gitlab.com/pad92/dotfiles/-/blob/master/archlinux/install.md</a></ref></p></section></main><footer><span style=float:right><cite>Edited on Apr 28, 2022</cite></span>
+<ref><a href=https://gitlab.com/pad92/dotfiles/-/blob/master/archlinux/install.md>https://gitlab.com/pad92/dotfiles/-/blob/master/archlinux/install.md</a></ref></p></section></main><footer><span style=float:right><cite>Edited on May 14, 2022</cite></span>
 <b>solmazfs</b> © 2021-2022 <a href=https://creativecommons.org/licenses/by-nc-sa/4.0/>BY-NC-SA 4.0</a></footer></body></html>
