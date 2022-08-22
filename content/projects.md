@@ -1,7 +1,7 @@
 ---
 title: "Projects"
 date: 2022-08-22T09:03:23+03:00
-description: "My project lists."
+description: "My project list."
 ready: "-"
 draft: false
 ---
