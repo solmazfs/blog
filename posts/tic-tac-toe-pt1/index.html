@@ -1,0 +1,106 @@
+<!doctype html><html><head><meta name=viewport content="width=device-width,initial-scale=1"><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css><title>blog.solmazfs &ndash; Making Tic-Tac-Toe Game with using 'raylib' - Part1</title><link rel=stylesheet href=https://solmazfs.github.io/blog/css/pub.css><link rel=stylesheet href=https://solmazfs.github.io/blog/css/screen.css><link rel=stylesheet href=https://solmazfs.github.io/blog/css/custom.css><link rel=stylesheet href=https://solmazfs.github.io/blog/css/syntax.css><style>th{font-weight:400}th,td{padding:0}code a{color:inherit;text-decoration:none}.tex,.latex{text-transform:uppercase}.tex>span,.latex>span{line-height:0;text-transform:uppercase}.latex>:first-child{margin-left:-.36em;margin-right:-.15em;vertical-align:.3em;font-size:70%}.tex>:last-child,.latex>:last-child{margin-left:-.1667em;margin-right:-.125em;vertical-align:-.5ex}.table-comments{width:auto;margin:auto;float:column-top;column-span:all}.table-comments th,.table-comments td{padding-left:2pt;padding-right:2pt}.table-comments th:nth-child(3),.table-comments td:nth-child(3){text-align:left}</style></head><body translate=no><header class="counter-skip header"><a href=https://solmazfs.github.io/blog><img alt=solmazfs src=https://solmazfs.github.io/blog/images/solmazfs.svg loading=lazy></a><nav class=navbar><ul><li><a href=https://solmazfs.github.io/blog/posts/>Posts</a></li><li><a href=https://solmazfs.github.io/blog/categories/>Categories</a></li><li><a href=https://solmazfs.github.io/blog/now/>Now</a></li><li><a href=https://solmazfs.github.io/blog/projects/>Projects</a></li></ul></nav></header><hr><main><aside class=counter-skip><cite>Making Tic-Tac-Toe Game with using &lsquo;raylib&rsquo; - Part1</cite>
+<cite>Aug 12, 2022</cite>
+<cite>311 Words</cite>
+<cite>in progress</cite><br><br><p><i>"Part 1: Basic setup and drawing the game board."</i></p></aside><section class=counter-skip><p>I&rsquo;ll skip general info about what is raylib and how to setup for different platforms.
+You can found these information in official repo.<small><a href=#ref1>[1]</a></small></p><h3 id=basic-setup-for-ready-to-use>Basic setup for ready to use</h3><p>// test it before release the post</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>#include &lt;stdio.h&gt;
+</span></span><span class=line><span class=cl>// library that you can code game
+</span></span><span class=line><span class=cl>#include &#34;raylib.h&#34;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>const int _SCREEN_W = 512;
+</span></span><span class=line><span class=cl>const int _SCREEN_H = 512;
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Color color_bg = {207,188,149,255};
+</span></span><span class=line><span class=cl>Color color_line = {32,54,51,255};
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>Rectangle boxIndex[3][3];
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>// methods
+</span></span><span class=line><span class=cl>void game_board();
+</span></span><span class=line><span class=cl>void spaces_collision_box();
+</span></span><span class=line><span class=cl>bool spaces_mouse_entered();
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>int main() {
+</span></span><span class=line><span class=cl>    InitWindow(_SCREEN_W,_SCREEN_H,&#34;main&#34;);
+</span></span><span class=line><span class=cl>    SetWindowState(FLAG_VSYNC_HINT);
+</span></span><span class=line><span class=cl>    SetTargetFPS(60);
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    // start here
+</span></span><span class=line><span class=cl>    RenderTexture2D target = LoadRenderTexture(_SCREEN_W,_SCREEN_H);
+</span></span><span class=line><span class=cl>    Rectangle source = {0,0,target.texture.width,-target.texture.height};
+</span></span><span class=line><span class=cl>    BeginTextureMode(target);
+</span></span><span class=line><span class=cl>    ClearBackground(color_bg);
+</span></span><span class=line><span class=cl>    game_board();
+</span></span><span class=line><span class=cl>    spaces_collision_box();
+</span></span><span class=line><span class=cl>    EndTextureMode();
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    // game loop
+</span></span><span class=line><span class=cl>    while (!WindowShouldClose()) {
+</span></span><span class=line><span class=cl>        BeginDrawing();
+</span></span><span class=line><span class=cl>        ClearBackground(BLACK);
+</span></span><span class=line><span class=cl>        DrawTextureRec(target.texture,source,(Vector2){0,0},color_bg);
+</span></span><span class=line><span class=cl>        if (spaces_mouse_entered()) {
+</span></span><span class=line><span class=cl>            DrawCircle(GetMousePosition().x,GetMousePosition().y,16,RED);
+</span></span><span class=line><span class=cl>        }
+</span></span><span class=line><span class=cl>        DrawFPS(10,10);
+</span></span><span class=line><span class=cl>        EndDrawing();
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>    CloseWindow();
+</span></span><span class=line><span class=cl>    return 0;
+</span></span><span class=line><span class=cl>}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>void game_board() {
+</span></span><span class=line><span class=cl>    float margin = (float)(_SCREEN_W - boardSize)/2;
+</span></span><span class=line><span class=cl>    // DEBUG --&gt; Center full line
+</span></span><span class=line><span class=cl>    DrawLineEx((Vector2){(float)_SCREEN_W/2,0},(Vector2){(float)_SCREEN_W/2,_SCREEN_H},2,GRAY);
+</span></span><span class=line><span class=cl>    DrawLineEx((Vector2){0,(float)_SCREEN_W/2},(Vector2){_SCREEN_W,(float)_SCREEN_H/2},2,GRAY);
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    for (int i=1; i&lt;3; i++) {
+</span></span><span class=line><span class=cl>        // columns
+</span></span><span class=line><span class=cl>        Vector2 colm_start = {((float)boardSize/3)*i+margin, margin};
+</span></span><span class=line><span class=cl>        Vector2 colm_end = {((float)boardSize/3)*i+margin, boardSize+margin};
+</span></span><span class=line><span class=cl>        DrawLineEx(colm_start,colm_end,8,color_line);
+</span></span><span class=line><span class=cl>        // rows
+</span></span><span class=line><span class=cl>        Vector2 row_start = {margin, ((float)boardSize/3)*i+margin};
+</span></span><span class=line><span class=cl>        Vector2 row_end = {boardSize+margin, ((float)boardSize/3)*i+margin};
+</span></span><span class=line><span class=cl>        DrawLineEx(row_start,row_end,8,color_line);
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>// draw shapes for each spaces
+</span></span><span class=line><span class=cl>void spaces_collision_box() {
+</span></span><span class=line><span class=cl>    Color col_alpha = {64,53,33,10};
+</span></span><span class=line><span class=cl>    float margin = (float)(_SCREEN_W - boardSize)/2;
+</span></span><span class=line><span class=cl>    int box_margin = 30; // margin for box
+</span></span><span class=line><span class=cl>    float box_w = (float)boardSize/3;
+</span></span><span class=line><span class=cl>    float box_h = (float)boardSize/3;
+</span></span><span class=line><span class=cl>    for (int i=0; i&lt; 3; i++) {
+</span></span><span class=line><span class=cl>        for (int j=0; j &lt; 3; j++) {
+</span></span><span class=line><span class=cl>            float x = box_w*i+margin + box_w/2;
+</span></span><span class=line><span class=cl>            float y = box_h*j+margin + box_h/2;
+</span></span><span class=line><span class=cl>            float xr = box_w/2-(float)box_margin/2;
+</span></span><span class=line><span class=cl>            boxIndex[i][j] = (Rectangle){x-xr,y-xr,box_w-margin,box_h-margin};
+</span></span><span class=line><span class=cl>            // DEBUG -&gt; collision shapes
+</span></span><span class=line><span class=cl>            DrawRectangleRec(boxIndex[i][j],col_alpha);
+</span></span><span class=line><span class=cl>        }
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>// check if mouse entered the area
+</span></span><span class=line><span class=cl>bool spaces_mouse_entered() {
+</span></span><span class=line><span class=cl>    for (int i=0; i&lt;3; i++) {
+</span></span><span class=line><span class=cl>        for (int j=0; j&lt;3; j++) {
+</span></span><span class=line><span class=cl>            if ( CheckCollisionPointRec(GetMousePosition(),boxIndex[i][j]) ) {
+</span></span><span class=line><span class=cl>                currentBox = boxIndex[i][j];
+</span></span><span class=line><span class=cl>                return true;
+</span></span><span class=line><span class=cl>            }
+</span></span><span class=line><span class=cl>        }
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>    return false;
+</span></span><span class=line><span class=cl>}
+</span></span></code></pre></div><h3 id=build-script>Build script</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>vim build.sh
+</span></span><span class=line><span class=cl>gcc tic-tac-toe.c -lraylib -lGL -lm -lpthread -ldl -lrt -lX11 &amp;&amp; ./a.out
+</span></span></code></pre></div><h3 id=try-to-run>Try to run</h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>chmod +x build.sh
+</span></span><span class=line><span class=cl>./build.sh
+</span></span></code></pre></div><p><ref id=ref1>Raylib official repo: <a href=https://github.com/raysan5/raylib>https://github.com/raysan5/raylib</a></ref></p></section></main><footer><span style=float:right><cite>Edited on Aug 22, 2022</cite></span>
+<b>solmazfs</b> © 2021-2022 <a href=https://creativecommons.org/licenses/by-nc-sa/4.0/>BY-NC-SA 4.0</a></footer></body></html>
