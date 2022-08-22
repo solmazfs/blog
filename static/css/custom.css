@@ -21,6 +21,23 @@ body {
 }
 
 /* link */
+nav ul { 
+  margin: 0;
+  width: 100%;
+  height: 60px;
+  list-style: none; 
+  display: flex; 
+  justify-content: flex-start;
+  flex-direction: column;
+  align-content: flex-start;
+  flex-wrap: wrap;
+}
+
+nav li { 
+  flex-basis: 10%;
+  width: 100%;
+}
+
 nav a:hover, nav a:hover > * { background-color:#000;color:#fff;text-decoration:none }
 main a:hover, main a:hover > * { background-color:#000;color:#fff;text-decoration:none }
 a {

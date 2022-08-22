@@ -28,6 +28,12 @@ enableGitInfo = true
     name = "Now"
     url = "/now/"
     weight = 3
+  [[menu.main]]
+    identifier = "projects"
+    name = "Projects"
+    url = "/projects/"
+    weight = 4
+
 
 [taxonomies]
     category = 'categories'

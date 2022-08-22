@@ -22,6 +22,10 @@ Add border to an image;
 ```text
 convert -bordercolor white -border 3 -bordercolor black -border 86 input.png output.png
 ```
+Image dithering;
+```text
+convert < input .png > -resize < 800x800 > -colorspace gray -ordered-dither o8x8 < output .png >
+```
 
 ### didder
 Image dithering;

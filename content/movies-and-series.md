@@ -11,7 +11,6 @@ draft: false
 
 ### Watch List
 - We Have Always Lived in the Castle (2018)
-- The Lobster (2015)
 
 ### Movies
 - Run and Gun (2022)
@@ -22,6 +21,7 @@ draft: false
 - <mark>Monos (2019)</mark>
 - <mark>Málmhaus (2013)</mark>
 - <mark>Gretel & Hansel (2020)</mark>
+- <mark>November (2017)</mark>
 - <mark>Orda (The Horde) (2012)</mark>
 - Trick 'r Treat (2007)
 - The Golden Glove (2019)
@@ -36,6 +36,7 @@ draft: false
 - Portrait de la jeune fille en feu (2019)
 - Léon (1994)
 - Lorelei (2020)
+- The Lobster (2015)
 - 7 Prisioneiros (2021)
 - Pan's Labyrinth (2006)
 - S.Darko (2009)

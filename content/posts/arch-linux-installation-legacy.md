@@ -38,7 +38,7 @@ draft: false
 ```text
 lsblk
 # find out name of USB --> e.g. "sdb" !choose right one.
-# Make sure USB drive is empty. This process destroy all data in sdb.
+# Make sure USB drive is empty. This process destroys all data in sdb.
 
 sudo dd bs=4M if=archlinux-*version-x86_64.iso of=/dev/< sdX > conv=fsync oflag=direct status=progress
 ```

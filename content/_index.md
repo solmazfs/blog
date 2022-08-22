@@ -3,7 +3,7 @@ title: "home"
 author : "solmazfs"
 ---
 
-Latest projects: (Webdesign, artwork gallery themes. *in progress*)
+Latest projects: (game-dev: Tictactoe, using raylib videogames library.)
 
 <img id="main-img" src="images/red.png" loading="lazy"/> 
 
