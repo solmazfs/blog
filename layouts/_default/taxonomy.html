@@ -7,9 +7,10 @@
         {{ range $value.Pages }}
         
         <ul>
-            <li style="line-height:6px;">
-                <a href="{{ .Permalink }}">{{ .Title }}</a>
-                <span style="float:right;">{{ .Date.Format "Jan 01, 2006" }}</span>
+            <li>
+                <a href="{{ .Permalink }}">{{ .Title | markdownify | safeHTML | truncate 30 }}</a>
+                <span>Γ</span>
+                <span class="post-date">{{ .Date.Format "Jan 01, 2006" }}</span>
             </li>
         </ul>
         {{ end }}
