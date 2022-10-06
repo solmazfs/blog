@@ -51,6 +51,11 @@ nav ul li {
     white-space:pre;
 }
 
+figcaption span {
+    font-weight: normal;
+    font-style: italic;
+}
+
 /* list */
 article > ol,
 article > ul {
