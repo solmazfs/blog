@@ -22,17 +22,23 @@ enableGitInfo = true
     name = "Categories"
     url = "/categories/"
     weight = 2
+  [[menu.main]]
+    identifier = "projects"
+    name = "Projects"
+    url = "/projects/"
+    weight = 3
+
+  [[menu.main]]
+    identifier = "mixed-log"
+    name = "Mixed-Log"
+    url = "/mixedlog/"
+    weight = 4
 
   [[menu.main]]
     identifier = "now"
     name = "Now"
     url = "/now/"
-    weight = 3
-  [[menu.main]]
-    identifier = "projects"
-    name = "Projects"
-    url = "/projects/"
-    weight = 4
+    weight = 5
 
 
 [taxonomies]
@@ -45,13 +51,13 @@ enableGitInfo = true
             unsafe = true
             hardWraps = false
 
-[markup.highlight]
-    codeFences = true
-    guessSyntax = true
-    hl_Lines = ""
-    lineNoStart = 1
-    tabWidth = 4
-    noClasses = false
+    [markup.highlight]
+        codeFences = true
+        guessSyntax = true
+        hl_Lines = ""
+        lineNoStart = 1
+        tabWidth = 4
+        noClasses = false
 
 [frontmatter]
     lastmod = [ "lastmod", ":git", "date", "publishDate" ]
