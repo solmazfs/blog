@@ -10,6 +10,16 @@ draft: false
 # 2022
 ## October
 
+[Blender] My project gets harder.
+
+{{< image_render face_new.png 140 "face topology new" >}}
+{{< image_render face_old.png 140 "face topology old" >}}
+{{< image_render knee_part.png 140 "knee topology" >}}
+
+[Orca & Surge XT] - Kinda good tho ...
+
+{{< audio test1.mp3 >}}
+
 [raylib] - 4 direction movement logic(grid).
 
 ```text
@@ -39,7 +49,6 @@ for (int i=1;i<=s;i+=2) {
     }
 }
 ```
-
 ![pyramid](/images/mixed-log/pyramid.png "140")
 
 [raylib] - Marquee effect.
