@@ -3,7 +3,7 @@ title: "home"
 author : "solmazfs"
 ---
 
-Latest projects: (game-dev: Tictactoe, using raylib videogames library. &mdash; Link: [Play](extra/raylib_tictactoe-webasm/))
+Latest projects: (game-dev: Snake, using raylib videogames library. &mdash; Link: [Play](extra/raylib_snake-webasm/))
 
 <img id="main-img" src="images/red.png" loading="lazy"/> 
 

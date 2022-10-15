@@ -6,8 +6,11 @@ ready: "-"
 draft: false
 ---
 
+&#9735; [Game-Dev] Snake, using raylib videogames library.
+- (start: October,2022 | done: October,2022 ) &mdash; Link: [Play](../extra/raylib_snake-webasm/)
+
 &#9735; [Game-Dev] Tictactoe, using raylib videogames library.
-- (start: June,2022 | done: - ) &mdash; Link: [Play](../extra/raylib_tictactoe-webasm/)
+- (start: June,2022 | July,2022 ) &mdash; Link: [Play](../extra/raylib_tictactoe-webasm/)
 
 &#9735; [Webdesign] Personal, artwork gallery themes/website.
 - (start: April,2022 | done: June,2022) &mdash; Link: [Gallery](https://solmazfs.github.io/gallery/)

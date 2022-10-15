@@ -10,6 +10,21 @@ draft: false
 # 2022
 ## October
 
+[raylib] - 4 direction movement logic(grid).
+
+```text
+enum MOVE {UP,DOWN,LEFT,RIGHT};
+Vector2 move_dir[4] = {{0,-1},{0,1},{-1,0},{1,0}};
+int move_dir_size = sizeof(move_dir)/sizeof(move_dir[0]);
+for (int i=0; i<move_dir_size; i++) {
+    move_dir[i] = Vector2Scale(move_dir[i],16);
+}
+
+// move e.g
+position.x += move_dir[RIGHT].x
+position.y += move_dir[RIGHT].y
+```
+
 [raylib] - Drawing pyramid with bunch of rectangles(as is pixel).
 
 ```text
