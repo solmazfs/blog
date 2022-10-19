@@ -3,7 +3,7 @@ title: "home"
 author : "solmazfs"
 ---
 
-Latest projects: (game-dev: Snake, using raylib videogames library. &mdash; Link: [Play](extra/raylib_snake-webasm/))
+Latest projects: (game-dev: Pong, using raylib videogames library. &mdash; Link: [Play](extra/raylib_pong-webasm/))
 
 <img id="main-img" src="images/red.png" loading="lazy"/> 
 
