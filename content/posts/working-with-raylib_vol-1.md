@@ -6,6 +6,52 @@ ready: "in progress"
 draft: false
 ---
 
+### Shader #1 (My very first shader experience with raylib)
+
+TODO: I should make new post for this
+
+
+```text
+$ pwd
+--> ../shader_demo
+$ ls
+--> main.c
+$ mkdir -p resources/shader
+$ vim resources/shader/first_shader.fs
+> #version 330
+> uniform float time_value = 0.0;
+> out vec4 finalColor; // result
+> void main() {
+>   // color is --> r,g,b,a - min: 0.0, max: 1.0
+>   // for this demo we changing g (green) value here
+>   finalColor = vec4(0.0,time_value,0.0,1.0);
+> }
+
+$ vim main.c
+> // defining opengl ver.
+> #define GLSL_VERSION 330
+> // loading shader
+> shader = LoadShader(0, TextFormat("resources/shaders/shader_demo.fs", GLSL_VERSION));
+> // getting time_value from shader
+> time = GetShaderLocation(shader, "time_value");
+> // time_value
+> time_value = 0.0f;
+> // in process
+> time_value+=0.01;
+> if (time_value > 1) {
+>     time_value = 0.0f;
+> }
+> // now we can transfer time_value to --> shaders time_value
+> // shader name, get, set, ...
+> SetShaderValue(shader,time,&time_value, SHADER_UNIFORM_FLOAT);
+> BeginShaderMode(shader);
+>     // inside this will affect
+>     DrawRectangle(250,120,85,85,YELLOW);
+> EndShaderMode();
+> // and unload shader like unloading resources
+> UnloadShader(shader);
+```
+
 ### Get color from hex value
 
 ```text
