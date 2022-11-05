@@ -3,7 +3,7 @@ title: "home"
 author : "solmazfs"
 ---
 
-Latest projects: (game-dev: Pong, using raylib videogames library. &mdash; Link: [Play](extra/raylib_pong-webasm/))
+Latest projects: (creative-coding: Conway's Game of Life, using raylib videogames library. &mdash; Link: [Play](extra/game_of_life/))
 
 <img id="main-img" src="images/red.png" loading="lazy"/> 
 
