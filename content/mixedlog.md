@@ -11,6 +11,19 @@ draft: false
 1. [October](#october)
 1. [June](#june)
 
+## November
+
+[Orca & Surge XT & Cardinal] - Some of things ...
+
+*warn: you may found audio a bit loud/noisy.*
+
+{{< audio "demo_records/slow_melody.ogg" >}}
+{{< audio "demo_records/ambient.wav" >}}
+{{< audio "demo_records/oye.wav" >}}
+{{< audio "demo_records/indigo.wav" >}}
+{{< audio "demo_records/indigo_guitar.wav" >}}
+{{< audio "demo_records/weird_guitar.wav" >}}
+
 ## October
 
 [Blender] My project gets harder.
