@@ -5,7 +5,7 @@ author : "solmazfs"
 
 &#128276; **Latest project**: (I've Redesigned My Website! &mdash; Link: [portfolio](https://solmazfs.github.io/))
 
-![red](/media/red.png)
+![red](./media/red.png)
 
 Currently reading: **Hiçten Az** by Slavoj Žižek. See other [readings](books).
 
