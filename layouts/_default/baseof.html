@@ -1,17 +1,38 @@
 <!DOCTYPE html>
 <html>
-    <head> {{- partial "head.html" . -}} </head>
-    <body translate="no">
-        <header class="counter-skip header">
-            {{- partial "header.html" . -}}
-        </header>
-        <hr />
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="/links/pub.css" type="text/css" rel="stylesheet">
+        <link href="/links/screen.css" type="text/css" rel="stylesheet">
+        <link href="/links/custom.css" type="text/css" rel="stylesheet">
+        <title>solmazfs &mdash; home</title>
+    </head>
+    <body>
+        <header><a href="{{ .Site.BaseURL }}"><img alt="solmazfs" src="/media/solmazfs.png"></a></header>
+        <nav>
+            <ul>
+                {{ range .Site.Menus.main }}
+                <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                {{ end }}
+            </ul>
+            <ul>
+                {{ range .Site.Menus.sidebar }}
+                <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                {{ end }}
+            </ul>
+        </nav>
         <main>
-            {{- block "main" . }}{{- end }}
+            {{ block "main" . }}{{ end }}
         </main>
-        <br />
         <footer>
-            {{- partial "footer.html" . -}}
+            <span>{{ .Site.Author.name }} &copy; {{ now.Year }} &mdash;</span>
+            <span>BY-NC-SA 4.0</span>
+            {{ $date := .Date.Format "Jan 2, 2006" }}
+            {{ $lastmod := .Lastmod.Format "Jan 2, 2006" }}
+            {{ if and (ne $lastmod $date) (gt .Lastmod .Date) }}
+            <span style="float:right;"><cite>Edited on {{ $lastmod }}</cite></span>
+            {{ end }}
         </footer>
     </body>
 </html>

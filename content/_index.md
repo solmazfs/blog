@@ -3,13 +3,13 @@ title: "home"
 author : "solmazfs"
 ---
 
-Latest projects: (creative-coding: Conway's Game of Life, using raylib videogames library. &mdash; Link: [Play](extra/game_of_life/))
+&#128276; **Latest project**: (I've Redesigned My Website! &mdash; Link: [portfolio](https://solmazfs.github.io/))
 
-<img id="main-img" src="images/red.png" loading="lazy"/> 
+![red](/media/red.png)
 
-Currently reading: **Hiçten Az**, Slavoj Žižek. See other [readings](books).
+Currently reading: **Hiçten Az** by Slavoj Žižek. See other [readings](books).
 
-Movies&Series list: [movies&series](movies-and-series)
+Currently watching: **Beetlejuice (1988)** by Tim Burton. See other [movies&series](movies-and-series).
 
 Music: [music](music)
 

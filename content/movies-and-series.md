@@ -2,18 +2,17 @@
 title: "Movies&Series"
 date: 2022-04-05T19:47:25+03:00
 description: "I love movies and series. So I decided to write some of them in this place. If you like movies and series like me, choose one you haven't watched before and enjoy!"
-ready: "in progress"
+ready: "-"
 draft: false
 ---
 01. [Watch list](#watch-list)
 01. [Movies](#movies)
 01. [Series](#series)
 
-### Watch List
-- We Have Always Lived in the Castle (2018)
-- Gel ve Gör (Come and See)
+## Watch List
+- Beetlejuice (1988)
 
-### Movies
+## Movies
 - Run and Gun (2022)
 - Dune (2021)
 - The Last Duel (2021)
@@ -83,7 +82,7 @@ draft: false
 - <mark>Coraline (2009)</mark>
 - Fantastic Mr. Fox (2009)
 
-### Series
+## Series
 - Disenchantment
 - Rick and Morty
 - <mark>Over the Garden Wall</mark>

@@ -1,6 +1,0 @@
-{{ $date := .Date.Format "Jan 2, 2006" }}
-{{ $lastmod := .Lastmod.Format "Jan 2, 2006" }}
-{{ if and (ne $lastmod $date) (gt .Lastmod .Date) }}
-    <span style="float:right;"><cite>Edited on {{ $lastmod }}</cite></span>
-{{ end }}
-<b>{{ .Site.Author.name }}</b> {{ .Site.Copyright }} <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">BY-NC-SA 4.0</a>

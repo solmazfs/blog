@@ -1,21 +1,21 @@
 ---
 title: "Books"
 description: "A list of books I've read, that I want to read and that I'm currently reading."
-ready: "in progress"
+ready: "-"
 date: 2022-04-20T12:14:48+03:00
 draft: false
 ---
 
-### Currently reading
+## Currently reading
 - **Hiçten Az**, Slavoj Žižek
 
-### Want to read  
+## Want to read  
 - **Dune**, Frank Herbert
 - **Busy Doing Nothing**, Rek & Devine
 
-### 2022 reading list
+## 2022 reading list
 
-### &mdash; 2021 reading list
+## &mdash; 2021 reading list
 > remembered
 - **Sürdürülebilir Beklentilere Teamülen Sanat**, Fevziye EYİGÖR PELİKOĞLU
 - **Kötülük Üzerine Bir Deneme**, Terry Eagleton

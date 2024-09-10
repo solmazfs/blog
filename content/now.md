@@ -6,6 +6,12 @@ ready: "🧿"
 draft: false
 ---
 
+01.04.2024, I quit from working factory.
+> It is what it is.
+
+17.01.2023, I started to work in factory.
+> Even though it is very difficult, I have to resist.
+
 05.04.2022, I applied for a "lecturer" position for the first time.
 > My application was accepted but I could not take the exam. 
 

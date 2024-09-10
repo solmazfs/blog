@@ -1,0 +1,45 @@
+baseURL = 'https://solmazfs.github.io/blog'
+languageCode = 'en-us'
+title = 'blog.solmazfs'
+
+[markup.goldmark.renderer]
+unsafe= true
+
+[author]
+  name = "solmazfs"
+  email = "info.solmazfs@gmail.com"
+  bio = "Short bio about the author."
+  website = "https://yourwebsite.com"
+  twitter = "https://twitter.com/yourprofile"
+
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "posts"
+    url = "/posts/"
+    weight = 1
+
+  [[menu.main]]
+    identifier = "categories"
+    name = "categories"
+    url = "/categories/"
+    weight = 2
+  [[menu.main]]
+    identifier = "projects"
+    name = "projects"
+    url = "/projects/"
+    weight = 3
+  [[menu.sidebar]]
+    identifier = "log"
+    name = "log"
+    url = "/log/"
+    weight = 1
+
+  [[menu.sidebar]]
+    identifier = "now"
+    name = "now"
+    url = "/now/"
+    weight = 2
+
+[frontmatter]
+    lastmod = [ "lastmod", ":git", "date", "publishDate" ]
