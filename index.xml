@@ -1,31 +1,184 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>home on blog.solmazfs</title><link>https://solmazfs.github.io/blog/</link><description>Recent content in home on blog.solmazfs</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>© 2021-2022</copyright><atom:link href="https://solmazfs.github.io/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>Working with raylib Vol:1</title><link>https://solmazfs.github.io/blog/posts/working-with-raylib_vol-1/</link><pubDate>Tue, 18 Oct 2022 14:27:07 +0300</pubDate><guid>https://solmazfs.github.io/blog/posts/working-with-raylib_vol-1/</guid><description>Shader #1 (My very first shader experience with raylib) TODO: I should make new post for this
-$ pwd --&amp;gt; ../shader_demo $ ls --&amp;gt; main.c $ mkdir -p resources/shader $ vim resources/shader/first_shader.fs &amp;gt; #version 330 &amp;gt; uniform float time_value = 0.0; &amp;gt; out vec4 finalColor; // result &amp;gt; void main() { &amp;gt; // color is --&amp;gt; r,g,b,a - min: 0.0, max: 1.0 &amp;gt; // for this demo we changing g (green) value here &amp;gt; finalColor = vec4(0.</description></item><item><title>Mixedlog</title><link>https://solmazfs.github.io/blog/mixedlog/</link><pubDate>Thu, 06 Oct 2022 19:17:44 +0300</pubDate><guid>https://solmazfs.github.io/blog/mixedlog/</guid><description>2022 &amp;mdash;&amp;ndash; October June November [Orca &amp;amp; Surge XT &amp;amp; Cardinal] - Some of things &amp;hellip;
-warn: you may found audio a bit loud/noisy.
-Your browser does not support the audio element. Your browser does not support the audio element. Your browser does not support the audio element. Your browser does not support the audio element. Your browser does not support the audio element. Your browser does not support the audio element.</description></item><item><title>Projects</title><link>https://solmazfs.github.io/blog/projects/</link><pubDate>Mon, 22 Aug 2022 09:03:23 +0300</pubDate><guid>https://solmazfs.github.io/blog/projects/</guid><description>☇ [Game-Dev] Pong, using raylib videogames library.
-(start: October,2022 | done: - ) — Link: Play ☇ [Game-Dev] Snake, using raylib videogames library.
-(start: October,2022 | done: October,2022 ) — Link: Play ☇ [Game-Dev] Tictactoe, using raylib videogames library.
-(start: June,2022 | July,2022 ) — Link: Play ☇ [Webdesign] Personal, artwork gallery themes/website.
-(start: April,2022 | done: June,2022) — Link: Gallery</description></item><item><title>Books</title><link>https://solmazfs.github.io/blog/books/</link><pubDate>Wed, 20 Apr 2022 12:14:48 +0300</pubDate><guid>https://solmazfs.github.io/blog/books/</guid><description>Currently reading Hiçten Az, Slavoj Žižek Want to read Dune, Frank Herbert Busy Doing Nothing, Rek &amp;amp; Devine 2022 reading list — 2021 reading list remembered
-Sürdürülebilir Beklentilere Teamülen Sanat, Fevziye EYİGÖR PELİKOĞLU Kötülük Üzerine Bir Deneme, Terry Eagleton Noam Chomsky İle İki Saat, Denis Robert&amp;amp;Weronika Zarachoxicz Böyle Söyledi Zerdüşt, Friedrich W. Nietzsche, çev: Mustafa Tüzel Lontano, Jean-Christophe Grangé Kongo&amp;rsquo;ya Ağıt, Jean-Christophe Grangé Kaiken, Jean-Christophe Grangé Taş Meclisi, Jean-Christophe Grangé Koloni, Jean-Christophe Grangé Siyah Kan, Jean-Christophe Grangé Şeytan Yemini, Jean-Christophe Grangé Beyaz Gemi, Cengiz Aytmatov Deniz Kıyısında Koşan Ala Köpek, Cengiz Aytmatov</description></item><item><title>Now</title><link>https://solmazfs.github.io/blog/now/</link><pubDate>Wed, 20 Apr 2022 00:33:18 +0300</pubDate><guid>https://solmazfs.github.io/blog/now/</guid><description>05.04.2022, I applied for a &amp;ldquo;lecturer&amp;rdquo; position for the first time.
-My application was accepted but I could not take the exam.
-28.03.2022, YÖKDİL(Sos.Bil.) exam result ↠ 65
-This exam was not as easy as i expected, so i need to concentrate more on advanced vocabulary studies.
-07.12.2021, ALES(SÖZ) exam result ↠ 72.8
-Finally, finally! I&amp;rsquo;ve just pass this exam.</description></item><item><title>Command Line General (Linux)</title><link>https://solmazfs.github.io/blog/posts/command-line-general/</link><pubDate>Fri, 08 Apr 2022 13:53:58 +0300</pubDate><guid>https://solmazfs.github.io/blog/posts/command-line-general/</guid><description>imagemagick didder ffmpeg other imagemagick Resize image;
-convert -resize 50% input.png output.png Add border to an image;
-convert -bordercolor white -border 3 -bordercolor black -border 86 input.png output.png Image dithering;
-convert &amp;lt; input .png &amp;gt; -resize &amp;lt; 800x800 &amp;gt; -colorspace gray -ordered-dither o8x8 &amp;lt; output .png &amp;gt; didder Image dithering;
-didder --palette &amp;#39;black white&amp;#39; -i input.png -o output.png bayer 16x16 ffmpeg Cut specific timeline from video;
-ffmpeg -ss &amp;lt; starting point &amp;gt; -i &amp;lt; input &amp;gt; -t &amp;lt; how long &amp;gt; -vcodec copy -acodec copy &amp;lt; output &amp;gt; #e.</description></item><item><title>Bitmap Font (GODOT)</title><link>https://solmazfs.github.io/blog/posts/bitmap-font/</link><pubDate>Fri, 08 Apr 2022 13:47:04 +0300</pubDate><guid>https://solmazfs.github.io/blog/posts/bitmap-font/</guid><description>In this guide we&amp;rsquo;ll learn how to use our custom designed font image for our game.
-drawing font [libresprite] In this part, we will draw the characters needed for only &amp;ldquo;HELLO WORLD!&amp;rdquo;. In future, you can draw the required characters for your project with the similar logic.[1]
-Create 90x10 canvas. Fill the background with #ff00ff color. Create a new layer and draw a total of 9 8x8 pixel squares. Color: #0000ff There will be 2 pixel space between each square but 1 pixel from the corners.</description></item><item><title>YÖKDİL Genel Notlar</title><link>https://solmazfs.github.io/blog/posts/yokdil/</link><pubDate>Fri, 08 Apr 2022 00:00:00 +0000</pubDate><guid>https://solmazfs.github.io/blog/posts/yokdil/</guid><description>@ydstime @remzihoca</description></item><item><title>Music</title><link>https://solmazfs.github.io/blog/music/</link><pubDate>Thu, 07 Apr 2022 14:05:05 +0300</pubDate><guid>https://solmazfs.github.io/blog/music/</guid><description>➥ aliceffekt
-Dei Dain by aliceffekt OST shire_music · ArchLord. 03. Del Paras Katana ZERO (Original Soundtrack) by LudoWic Axiom Verge Soundtrack by Thomas Happ black/metal ➥ Vermilia
-Täällä Pohjantähden Alla by Vermilia ➥ Metalhead (soundtrack)
-METALHEAD by Petur Ben ➥ NARGAROTH
-Black Metal ist Krieg (A Dedication Monument) by NARGAROTH ➥ Bethlehem
-Lebe Dich Leer by Bethlehem ➥ Rotting Christ
-The Heretics by Rotting Christ</description></item><item><title>Movies&amp;Series</title><link>https://solmazfs.github.io/blog/movies-and-series/</link><pubDate>Tue, 05 Apr 2022 19:47:25 +0300</pubDate><guid>https://solmazfs.github.io/blog/movies-and-series/</guid><description>Watch list Movies Series Watch List We Have Always Lived in the Castle (2018) Gel ve Gör (Come and See) Movies Run and Gun (2022) Dune (2021) The Last Duel (2021) De uskyldige (2021) Narayama bushikô (1958) Monos (2019) Málmhaus (2013) Gretel &amp;amp; Hansel (2020) November (2017) Orda (The Horde) (2012) Trick &amp;lsquo;r Treat (2007) The Golden Glove (2019) Frances Ha (2012) The Lord of the Rings 1,2,3 The Hobbit 1,2,3 Only Lovers Left Alive (2013) Shame (2011) Into the Wild (2007) The Grand Budapest Hotel (2014) Wristcutters: A Love Story (2006) Portrait de la jeune fille en feu (2019) Léon (1994) Lorelei (2020) The Lobster (2015) 7 Prisioneiros (2021) Pan&amp;rsquo;s Labyrinth (2006) S.</description></item><item><title>ALES(SÖZEL) Genel Notlar</title><link>https://solmazfs.github.io/blog/posts/ales/</link><pubDate>Mon, 29 Nov 2021 18:43:45 +0300</pubDate><guid>https://solmazfs.github.io/blog/posts/ales/</guid><description>pratik, pratik, pratik! (ALES formatından uzak deneme yayınları sadece para israfı.)
-&amp;ldquo;Öncelikle belirtmeliyim ki ben bu sınavın piri değilim. Sadece baraj üstü bir puan alarak, bunun sevinci içerisinde bu süreci nasıl atlattığım hakkında bir genel öneri paylaşma ihtiyacı duydum. Bazı adaylar için bu sınav görece zor gelmeyebilir. Oysa ben bu süreçte onca deneme çözümü ve 7 adet başarısız sınav sonucunun getirdiği ümitsizlik içerisinde az da olsa bir başarı yakaladım. Sorularınız olursa iletişim e-postası üzerinden benimle iletişim sağlayabilirsiniz.</description></item><item><title>Arch Linux Installation (Legacy)</title><link>https://solmazfs.github.io/blog/posts/arch-linux-installation-legacy/</link><pubDate>Mon, 29 Nov 2021 00:10:24 +0300</pubDate><guid>https://solmazfs.github.io/blog/posts/arch-linux-installation-legacy/</guid><description>[Legacy] BIOS mode
-Make Bootable USB Wipe Disk Disk partitioning Encryption Create Physical&amp;amp;Logical Volume(s) Formatting&amp;amp;Mounting Install base Generate fstab Enter new system Timezone Language root&amp;amp;user setup Luks key TODO Grub Exit Update System Install Gnome Optional Step 1 ➥ (make bootable USB):
-Download iso: https://archlinux.org/download/ Burn archlinux-version-x86_64.iso file to a USB drive. to do that;
-lsblk # find out name of USB --&amp;gt; e.g. &amp;#34;sdb&amp;#34; !choose right one. # Make sure USB drive is empty.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>home on blog.solmazfs</title><link>https://solmazfs.github.io/blog/</link><description>Recent content in home on blog.solmazfs</description><generator>Hugo</generator><language>en-us</language><managingEditor>info.solmazfs@gmail.com (solmazfs)</managingEditor><webMaster>info.solmazfs@gmail.com (solmazfs)</webMaster><lastBuildDate>Mon, 22 Aug 2022 09:03:23 +0300</lastBuildDate><atom:link href="https://solmazfs.github.io/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>Projects</title><link>https://solmazfs.github.io/blog/projects/</link><pubDate>Mon, 22 Aug 2022 09:03:23 +0300</pubDate><author>info.solmazfs@gmail.com (solmazfs)</author><guid>https://solmazfs.github.io/blog/projects/</guid><description>&lt;p>[&lt;strong>Webdesign&lt;/strong>] Personal, artwork gallery themes/website.&lt;/p>
+&lt;blockquote>
+&lt;p>(start: May,2024 | done: May,2024) — Link: &lt;a href="https://solmazfs.github.io/">Website&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>[&lt;strong>Game-Dev&lt;/strong>] Pong, using raylib videogames library.&lt;/p>
+&lt;blockquote>
+&lt;p>(start: October,2022 | done: - ) — Link: &lt;a href="../extra/raylib_pong-webasm/">Play&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>[&lt;strong>Game-Dev&lt;/strong>] Snake, using raylib videogames library.&lt;/p>
+&lt;blockquote>
+&lt;p>(start: October,2022 | done: October,2022 ) — Link: &lt;a href="../extra/raylib_snake-webasm/">Play&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>[&lt;strong>Game-Dev&lt;/strong>] Tictactoe, using raylib videogames library.&lt;/p>
+&lt;blockquote>
+&lt;p>(start: June,2022 | July,2022 ) — Link: &lt;a href="../extra/raylib_tictactoe-webasm/">Play&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;p>[&lt;strong>Webdesign&lt;/strong>] Personal, artwork gallery themes/website.&lt;/p>
+&lt;blockquote>
+&lt;p>(start: April,2022 | done: June,2022) — Link: &lt;a href="https://solmazfs.github.io/gallery/">Gallery&lt;/a>&lt;/p>
+&lt;/blockquote></description></item><item><title>Books</title><link>https://solmazfs.github.io/blog/books/</link><pubDate>Wed, 20 Apr 2022 12:14:48 +0300</pubDate><author>info.solmazfs@gmail.com (solmazfs)</author><guid>https://solmazfs.github.io/blog/books/</guid><description>&lt;h2 id="currently-reading">Currently reading&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Hiçten Az&lt;/strong>, Slavoj Žižek&lt;/li>
+&lt;/ul>
+&lt;h2 id="want-to-read">Want to read&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Dune&lt;/strong>, Frank Herbert&lt;/li>
+&lt;li>&lt;strong>Busy Doing Nothing&lt;/strong>, Rek &amp;amp; Devine&lt;/li>
+&lt;/ul>
+&lt;h2 id="2022-reading-list">2022 reading list&lt;/h2>
+&lt;h2 id="mdash-2021-reading-list">— 2021 reading list&lt;/h2>
+&lt;blockquote>
+&lt;p>remembered&lt;/p>
+&lt;/blockquote>
+&lt;ul>
+&lt;li>&lt;strong>Sürdürülebilir Beklentilere Teamülen Sanat&lt;/strong>, Fevziye EYİGÖR PELİKOĞLU&lt;/li>
+&lt;li>&lt;strong>Kötülük Üzerine Bir Deneme&lt;/strong>, Terry Eagleton&lt;/li>
+&lt;li>&lt;strong>Noam Chomsky İle İki Saat&lt;/strong>, Denis Robert&amp;amp;Weronika Zarachoxicz&lt;/li>
+&lt;li>&lt;strong>Böyle Söyledi Zerdüşt&lt;/strong>, Friedrich W. Nietzsche, &lt;em>çev: Mustafa Tüzel&lt;/em>&lt;/li>
+&lt;li>&lt;strong>Lontano&lt;/strong>, Jean-Christophe Grangé&lt;/li>
+&lt;li>&lt;strong>Kongo&amp;rsquo;ya Ağıt&lt;/strong>, Jean-Christophe Grangé&lt;/li>
+&lt;li>&lt;strong>Kaiken&lt;/strong>, Jean-Christophe Grangé&lt;/li>
+&lt;li>&lt;strong>Taş Meclisi&lt;/strong>, Jean-Christophe Grangé&lt;/li>
+&lt;li>&lt;strong>Koloni&lt;/strong>, Jean-Christophe Grangé&lt;/li>
+&lt;li>&lt;strong>Siyah Kan&lt;/strong>, Jean-Christophe Grangé&lt;/li>
+&lt;li>&lt;strong>Şeytan Yemini&lt;/strong>, Jean-Christophe Grangé&lt;/li>
+&lt;li>&lt;strong>Beyaz Gemi&lt;/strong>, Cengiz Aytmatov&lt;/li>
+&lt;li>&lt;strong>Deniz Kıyısında Koşan Ala Köpek&lt;/strong>, Cengiz Aytmatov&lt;/li>
+&lt;/ul></description></item><item><title>Now</title><link>https://solmazfs.github.io/blog/now/</link><pubDate>Wed, 20 Apr 2022 00:33:18 +0300</pubDate><author>info.solmazfs@gmail.com (solmazfs)</author><guid>https://solmazfs.github.io/blog/now/</guid><description>&lt;p>01.04.2024, I quit from working factory.&lt;/p>
+&lt;blockquote>
+&lt;p>It is what it is.&lt;/p>
+&lt;/blockquote>
+&lt;p>17.01.2023, I started to work in factory.&lt;/p>
+&lt;blockquote>
+&lt;p>Even though it is very difficult, I have to resist.&lt;/p>
+&lt;/blockquote>
+&lt;p>05.04.2022, I applied for a &amp;ldquo;lecturer&amp;rdquo; position for the first time.&lt;/p>
+&lt;blockquote>
+&lt;p>My application was accepted but I could not take the exam.&lt;/p>
+&lt;/blockquote>
+&lt;p>28.03.2022, YÖKDİL(Sos.Bil.) exam result ↠  &lt;mark>65&lt;/mark>&lt;/p>
+&lt;blockquote>
+&lt;p>This exam was not as easy as i expected, so i need to concentrate more on advanced vocabulary studies.&lt;/p></description></item><item><title>Movies&amp;Series</title><link>https://solmazfs.github.io/blog/movies-and-series/</link><pubDate>Tue, 05 Apr 2022 19:47:25 +0300</pubDate><author>info.solmazfs@gmail.com (solmazfs)</author><guid>https://solmazfs.github.io/blog/movies-and-series/</guid><description>&lt;ol>
+&lt;li>&lt;a href="#watch-list">Watch list&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#movies">Movies&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#series">Series&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;h2 id="watch-list">Watch List&lt;/h2>
+&lt;ul>
+&lt;li>Beetlejuice (1988)&lt;/li>
+&lt;/ul>
+&lt;h2 id="movies">Movies&lt;/h2>
+&lt;ul>
+&lt;li>Run and Gun (2022)&lt;/li>
+&lt;li>Dune (2021)&lt;/li>
+&lt;li>The Last Duel (2021)&lt;/li>
+&lt;li>&lt;mark>De uskyldige (2021)&lt;/mark>&lt;/li>
+&lt;li>&lt;mark>Narayama bushikô (1958)&lt;/mark>&lt;/li>
+&lt;li>&lt;mark>Monos (2019)&lt;/mark>&lt;/li>
+&lt;li>&lt;mark>Málmhaus (2013)&lt;/mark>&lt;/li>
+&lt;li>&lt;mark>Gretel &amp;amp; Hansel (2020)&lt;/mark>&lt;/li>
+&lt;li>&lt;mark>November (2017)&lt;/mark>&lt;/li>
+&lt;li>&lt;mark>Orda (The Horde) (2012)&lt;/mark>&lt;/li>
+&lt;li>Trick &amp;lsquo;r Treat (2007)&lt;/li>
+&lt;li>The Golden Glove (2019)&lt;/li>
+&lt;li>&lt;mark>Frances Ha (2012)&lt;/mark>&lt;/li>
+&lt;li>The Lord of the Rings 1,2,3&lt;/li>
+&lt;li>The Hobbit 1,2,3&lt;/li>
+&lt;li>Only Lovers Left Alive (2013)&lt;/li>
+&lt;li>Shame (2011)&lt;/li>
+&lt;li>Into the Wild (2007)&lt;/li>
+&lt;li>The Grand Budapest Hotel (2014)&lt;/li>
+&lt;li>Wristcutters: A Love Story (2006)&lt;/li>
+&lt;li>Portrait de la jeune fille en feu (2019)&lt;/li>
+&lt;li>Léon (1994)&lt;/li>
+&lt;li>Lorelei (2020)&lt;/li>
+&lt;li>The Lobster (2015)&lt;/li>
+&lt;li>7 Prisioneiros (2021)&lt;/li>
+&lt;li>Pan&amp;rsquo;s Labyrinth (2006)&lt;/li>
+&lt;li>S.Darko (2009)&lt;/li>
+&lt;li>Donnie Darko (2001)&lt;/li>
+&lt;li>Alice (1989)&lt;/li>
+&lt;li>Return to Oz (1985)&lt;/li>
+&lt;li>Jumanji (1995)&lt;/li>
+&lt;li>Amores Perros (2000)&lt;/li>
+&lt;li>Powder Blue (2008)&lt;/li>
+&lt;li>Angel-A (2005)&lt;/li>
+&lt;li>Die Hard 4.0 (2007)&lt;/li>
+&lt;li>Sin City (2005)&lt;/li>
+&lt;li>Sin City A Dame To Kill For (2014)&lt;/li>
+&lt;li>Franklyn (2008)&lt;/li>
+&lt;li>Eternal Sunshine of the Spotless Mind (2004)&lt;/li>
+&lt;li>The Number 23 (2007)&lt;/li>
+&lt;li>Miss Peregrine&amp;rsquo;s Home for Peculiar Children (2016)&lt;/li>
+&lt;li>&lt;mark>Naked (1993)&lt;/mark>&lt;/li>
+&lt;li>&lt;mark>Ben X (2007)&lt;/mark>&lt;/li>
+&lt;li>&lt;mark>Let the Right One In (2008)&lt;/mark>&lt;/li>
+&lt;li>The Grey (2011)&lt;/li>
+&lt;li>Logan (2017)&lt;/li>
+&lt;li>Riddick (2013)&lt;/li>
+&lt;li>Blood Diamond (2006)&lt;/li>
+&lt;li>Mad Max: Fury Road (2015)&lt;/li>
+&lt;li>The Call of the Wild (2020)&lt;/li>
+&lt;li>&lt;mark>Spirited Away (2001)&lt;/mark>&lt;/li>
+&lt;li>My Neighbor Totoro (1988)&lt;/li>
+&lt;li>Howl&amp;rsquo;s Moving Castle (2004)&lt;/li>
+&lt;li>Kiki&amp;rsquo;s Delivery Service (1989)&lt;/li>
+&lt;li>Mary and the Witch&amp;rsquo;s Flower (2017)&lt;/li>
+&lt;li>&lt;mark>WALL-E (2008)&lt;/mark>&lt;/li>
+&lt;li>&lt;mark>9 (2009)&lt;/mark>&lt;/li>
+&lt;li>Inside Out (2015)&lt;/li>
+&lt;li>Soul (2020)&lt;/li>
+&lt;li>Shrek 1,2,3&lt;/li>
+&lt;li>Brave (2012)&lt;/li>
+&lt;li>Wreck-It Ralph (2012)&lt;/li>
+&lt;li>The Boxtrolls (2014)&lt;/li>
+&lt;li>Corpse Bride (2005)&lt;/li>
+&lt;li>Frankenweenie (2012)&lt;/li>
+&lt;li>Mary and Max (2009)&lt;/li>
+&lt;li>&lt;mark>Coraline (2009)&lt;/mark>&lt;/li>
+&lt;li>Fantastic Mr. Fox (2009)&lt;/li>
+&lt;/ul>
+&lt;h2 id="series">Series&lt;/h2>
+&lt;ul>
+&lt;li>Disenchantment&lt;/li>
+&lt;li>Rick and Morty&lt;/li>
+&lt;li>&lt;mark>Over the Garden Wall&lt;/mark>&lt;/li>
+&lt;li>Regular Show&lt;/li>
+&lt;li>Close Enough&lt;/li>
+&lt;li>&lt;mark>Invasion&lt;/mark>&lt;/li>
+&lt;li>Little Witch Academia&lt;/li>
+&lt;li>Love, Death &amp;amp; Robots&lt;/li>
+&lt;li>The Book of Boba Fett&lt;/li>
+&lt;li>The Mandalorian&lt;/li>
+&lt;li>The Witcher&lt;/li>
+&lt;li>Biohackers&lt;/li>
+&lt;li>&lt;mark>Dark&lt;/mark>&lt;/li>
+&lt;li>See&lt;/li>
+&lt;li>Silicon Valley&lt;/li>
+&lt;li>Milennium&lt;/li>
+&lt;li>&lt;mark>Stateless&lt;/mark>&lt;/li>
+&lt;li>&lt;mark>Penny Dreadful&lt;/mark>&lt;/li>
+&lt;li>Lucifer&lt;/li>
+&lt;li>WandaVision&lt;/li>
+&lt;li>Vis a Vis&lt;/li>
+&lt;li>La casa de papel&lt;/li>
+&lt;li>&lt;mark>Black Mirror&lt;/mark>&lt;/li>
+&lt;li>&lt;mark>Mr.Robot&lt;/mark>&lt;/li>
+&lt;li>Person of Interest&lt;/li>
+&lt;li>Breaking Bad&lt;/li>
+&lt;li>shameless&lt;/li>
+&lt;li>Easy&lt;/li>
+&lt;li>&lt;mark>Westworld&lt;/mark>&lt;/li>
+&lt;li>Taboo&lt;/li>
+&lt;li>Marco Polo&lt;/li>
+&lt;li>&lt;mark>Norsemen&lt;/mark>&lt;/li>
+&lt;li>Vikings: Valhalla&lt;/li>
+&lt;li>Vikings&lt;/li>
+&lt;li>Merlin&lt;/li>
+&lt;li>Game of Thrones&lt;/li>
+&lt;li>Chilling Adventures of Sabrina&lt;/li>
+&lt;li>American Horror Story&lt;/li>
+&lt;li>American Horror Stories&lt;/li>
+&lt;li>Masters of Horror&lt;/li>
+&lt;/ul></description></item></channel></rss>
