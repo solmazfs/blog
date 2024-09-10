@@ -3,13 +3,13 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="/links/pub.css" type="text/css" rel="stylesheet">
-        <link href="/links/screen.css" type="text/css" rel="stylesheet">
-        <link href="/links/custom.css" type="text/css" rel="stylesheet">
+        <link href="{{ "links/pub.css" | absURL }}" type="text/css" rel="stylesheet">
+        <link href="{{ "links/screen.css" | absURL }}" type="text/css" rel="stylesheet">
+        <link href="{{ "links/custom.css" | absURL }}" type="text/css" rel="stylesheet">
         <title>solmazfs &mdash; home</title>
     </head>
     <body>
-        <header><a href="{{ .Site.BaseURL }}"><img alt="solmazfs" src="/media/solmazfs.png"></a></header>
+        <header><a href="{{ .Site.BaseURL }}"><img alt="solmazfs" src="{{ "media/solmazfs.png" | absURL }}"></a></header>
         <nav>
             <ul>
                 {{ range .Site.Menus.main }}
