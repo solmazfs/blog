@@ -4,7 +4,7 @@ date = 2024-09-11T15:29:19+03:00
 lang = "tr"
 description = "Bu yazı, ALES sözel alanında başarılı olmak için izlediğim kişisel hazırlık sürecimi ve deneyimlerimi paylaşırken, bazı detayları atlamış olabileceğimi de göz önünde bulundurmalısınız."
 ready = "+"
-draft = true
+draft = false
 +++
 
 ## ALES’e Hazırlık: Sözel Deneyimim ve Önerilerim

@@ -5,6 +5,11 @@ title = 'blog.solmazfs'
 [markup.goldmark.renderer]
 unsafe= true
 
+[[cascade]]
+draft = false
+[cascade._target]
+kind = 'page'
+
 [author]
   name = "solmazfs"
   email = "info.solmazfs@gmail.com"
