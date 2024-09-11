@@ -18,7 +18,7 @@ img {
   margin: 0 auto;
 }
 
-article ul { padding-left:3em; }
+article ul, aside ul { padding-left:3em; }
 
 .mg-4 { margin-bottom:4em; }
 
