@@ -1,0 +1,58 @@
+{{ define "main" }}
+<div class="m-list counter-skip">
+    {{ if .Content }}
+        {{ .Content }}
+    {{ end }}
+
+    <h2>Watch List</h2>
+    <ul>
+        {{ if .Site.Data.media.watch_list.movies }}
+            {{ range .Site.Data.media.watch_list.movies }}
+                <li>
+                    {{ if .highlight }}
+                        <mark>{{ .title }}</mark>
+                    {{ else }}
+                        {{ .title }}
+                    {{ end }}
+                </li>
+            {{ end }}
+        {{ else }}
+            <li>...</li>
+        {{ end }}
+    </ul>
+
+    <h2>Movies</h2>
+    <ul>
+        {{ if .Site.Data.media.movies.list }}
+            {{ range .Site.Data.media.movies.list }}
+                <li>
+                    {{ if .highlight }}
+                        <mark>{{ .title }}</mark>
+                    {{ else }}
+                        {{ .title }}
+                    {{ end }}
+                </li>
+            {{ end }}
+        {{ else }}
+            <li>...</li>
+        {{ end }}
+    </ul>
+
+    <h2>Series</h2>
+    <ul>
+        {{ if .Site.Data.media.series.list }}
+            {{ range .Site.Data.media.series.list }}
+                <li>
+                    {{ if .highlight }}
+                        <mark>{{ .title }}</mark>
+                    {{ else }}
+                        {{ .title }}
+                    {{ end }}
+                </li>
+            {{ end }}
+        {{ else }}
+            <li>...</li>
+        {{ end }}
+    </ul>
+</div>
+{{ end }}

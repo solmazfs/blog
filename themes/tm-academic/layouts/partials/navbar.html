@@ -1,0 +1,10 @@
+<header>
+    <a href="{{ .Site.BaseURL }}" class="logo">{{ .Site.Params.author }}</a>
+</header>
+<nav>
+    <ul>
+        {{ range .Site.Menus.main }}
+        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+        {{ end }}
+    </ul>
+</nav>

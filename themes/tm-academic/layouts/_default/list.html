@@ -1,0 +1,24 @@
+{{ define "main" }}
+<article class="counter-skip">
+    <h1>{{ .Title }}</h1>
+    {{ if .Content }}
+        <div>
+            {{ .Content }}
+        </div>
+    {{ end }}
+
+    {{ if .Pages }}
+        <section>
+            <ul>
+                {{ range .Pages }}
+                <li>
+                    <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+                </li>
+                {{ end }}
+            </ul>
+        </section>
+    {{ else }}
+        <p>No content found in this section.</p>
+    {{ end }}
+</article>
+{{ end }}

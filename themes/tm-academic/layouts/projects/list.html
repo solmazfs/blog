@@ -1,0 +1,47 @@
+{{ define "main" }}
+<div class="counter-skip">
+    {{ if .Content }}
+        <h3>{{ .Content }}</h3>
+    {{ end }}
+
+    <div>
+        <h2>Latest Project</h2>
+        {{ with .Site.Data.projects.latest_completed_project }}
+            <div>
+                <h3>
+                    {{ .title }}
+                    {{ if .link }}
+                        &mdash; Project <a href="{{ .link }}" target="_blank" rel="noopener noreferrer">link.</a>
+                    {{ end }}
+                </h3>
+                <p>{{ .description }}</p>
+                <cite>{{ .date | time.Format "January, 2006" }}</cite>
+            </div>
+        {{ end }}
+    </div>
+
+    <div>
+        <h2>Project list</h2>
+        {{ with .Site.Data.projects.completed_projects }}
+            {{ if . }}
+                <ul>
+                    {{ range . }}
+                        <li>
+                            <h3>
+                                {{ .title }}
+                                {{ if .link }}
+                                    &mdash; Project <a href="{{ .link }}" target="_blank" rel="noopener noreferrer">link.</a>
+                                {{ end }}
+                            </h3>
+                            <p>{{ .description }}</p>
+                            <cite>{{ .date | time.Format "January, 2006" }}</cite>
+                        </li>
+                    {{ end }}
+                </ul>
+            {{ else }}
+                <p>No other completed projects found.</p>
+            {{ end }}
+        {{ end }}
+    </div>
+</div>
+{{ end }}

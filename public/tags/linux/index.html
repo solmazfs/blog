@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="UTF-8">
+	<title>My New Hugo Site</title>
+	<link rel="stylesheet" href="/links/pub.css">
+	<link rel="stylesheet" href="/links/screen.css">
+	<link rel="stylesheet" href="/links/custom.css">
+</head>
+<body>
+	<header>
+    <a href="http://localhost:1313/" class="logo">solmazfs</a>
+</header>
+<nav>
+    <ul>
+        
+        <li><a href="/posts/">posts</a></li>
+        
+        <li><a href="/categories/">categories</a></li>
+        
+        <li><a href="/projects/">projects</a></li>
+        
+        <li><a href="/now/">now</a></li>
+        
+        <li><a href="/log/">log</a></li>
+        
+    </ul>
+</nav>
+
+	<main>
+<article>
+    <h1>Linux</h1>
+    
+
+    
+        <section>
+            <ul>
+                
+                <li>
+                    <h2><a href="http://localhost:1313/posts/command-line-general/">Command Line General (Linux)</a></h2>
+                    
+                    <p><ol>
+<li><a href="#imagemagick">imagemagick</a></li>
+<li><a href="#didder">didder</a></li>
+<li><a href="#ffmpeg">ffmpeg</a></li>
+<li><a href="#other">other</a></li>
+</ol>
+<h3 id="imagemagick">imagemagick</h3>
+<p>Resize image;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>convert -resize 50% input.png output.png
+</span></span></code></pre></div><p>Add border to an image;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>convert -bordercolor white -border 3 -bordercolor black -border 86 input.png output.png
+</span></span></code></pre></div><p>Image dithering;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>convert &lt; input .png &gt; -resize &lt; 800x800 &gt; -colorspace gray -ordered-dither o8x8 &lt; output .png &gt;
+</span></span></code></pre></div><h3 id="didder">didder</h3>
+<p>Image dithering;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>didder --palette &#39;black white&#39; -i input.png -o output.png bayer 16x16
+</span></span></code></pre></div><h3 id="ffmpeg">ffmpeg</h3>
+<p>Cut specific timeline from video;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>ffmpeg -ss &lt; starting point &gt; -i &lt; input &gt; -t &lt; how long &gt; -vcodec copy -acodec copy &lt; output &gt;
+</span></span><span style="display:flex;"><span>#e.g.
+</span></span><span style="display:flex;"><span>ffmpeg -ss 00:00:30 -i input.mp4 -t 00:00:05 -vcodec copy -acodec copy output.mp4
+</span></span></code></pre></div><p>Merge multiple videos;</p></p>
+                    
+                        <a href="http://localhost:1313/posts/command-line-general/">Read More &rarr;</a>
+                    
+                    
+                </li>
+                
+            </ul>
+        </section>
+    
+</article>
+</main>
+    <footer>
+    <p style="padding:0; margin:0;">
+    <span style="float:left;">&copy; 2025 — BY-NC-SA 4.0</span>
+    <span style="float:right;"> <small>updated</small> Jun 11, 2025</span>
+    </p>
+</footer>
+
+</body>
+</html>

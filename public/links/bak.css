@@ -1,0 +1,64 @@
+/* static/css/style.css */
+
+.navbar {
+    display: flex;
+    align-items: flex-start;
+    padding: 1.25rem 1.875rem;
+    box-shadow: none;
+    min-height: 7.5rem;
+}
+
+.navbar-left {
+    margin-right: 2.5rem;
+    padding-top: 0.3125rem;
+}
+
+.navbar-left .logo {
+    color: #333;
+    text-decoration: none;
+    font-size: 1.75rem;
+    font-weight: bold;
+    letter-spacing: 0.0625rem;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 0.3125rem;
+}
+
+.menu-columns {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-height: 6rem;
+    column-gap: 2.5rem;
+    overflow: hidden;
+    align-content: flex-start;
+}
+
+.menu-columns li {
+    margin-bottom: 0.3125rem;
+    margin-right: 0;
+}
+
+.menu-columns li:nth-child(3n) {
+    margin-bottom: 0;
+}
+
+.menu-columns li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 0.1875rem 0;
+    display: inline-block;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+.menu-columns li a:hover {
+    color: #007bff;
+}

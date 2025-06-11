@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pong - Smash!</title>
+    <meta name="title" content="Pong">
+    <meta name="description" content="A new raylib web videogame, developed using the raylib games library.">
+    <meta name="keywords" content="raylib, games, html5, programming, C, C++, library, learn, videogames">
+    
+    <link href="https://www.raylib.com/favicon.ico" rel="shortcut icon">
+    
+    <style>
+        html {
+            background-color: #909090;
+        }
+        body {
+            max-width: 640px; /* Oyun alanına göre ayarlanabilir */
+            height: auto;
+            margin: auto; /* Ortalamak için */
+            padding: 1em;
+            text-align: center; /* İçeriği ortalamak için */
+            font-family: sans-serif; /* Daha okunaklı bir font */
+            color: #333;
+        }
+        canvas.emscripten {
+            border: 0 none;
+            background-color: #000;
+            display: block; /* Ortalamak için */
+            margin: 0 auto; /* Ortalamak için */
+        }
+        h3, h4, p, small {
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+        }
+        a {
+            color: #007bff; /* Link rengi */
+            text-decoration: none; /* Alt çizgiyi kaldır */
+        }
+        a:hover {
+            text-decoration: underline; /* Mouse üstüne gelince alt çizgi ekle */
+        }
+    </style>
+    
+    <script src="https://cdn.jsdelivr.net/gh/eligrey/FileSaver.js/dist/FileSaver.min.js"></script>
+    <script>
+        function saveFileFromMEMFSToDisk(e,a){
+            var i,o=FS.readFile(e);
+            i=new Blob([o.buffer],{type:"application/octet-binary"}),saveAs(i,a)
+        }
+    </script>
+</head>
+<body>
+    <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" tabindex="-1"></canvas>
+    
+    <h3>Pong - Smash! _Ver.0.9</h3>
+    
+    <div class="game-instructions">
+        <p>Press **[Enter / Space]** to start the game.</p>
+        <p>Move paddles using **[Up]** and **[Down]** keys.</p>
+        <p>Hold **[Left Shift]** to slow down paddle movement.</p>
+        <p>Press **[Space]** to activate smash ability.</p>
+        <p>In gameplay, press **[P]** to switch between player control and AI play.</p>
+        <small>*Score system is currently undergoing maintenance!</small>
+    </div>
+
+    <h4>
+        Source Code: <a href="https://github.com/solmazfs/raylib_pong-webasm">github.com/solmazfs/raylib_pong-webasm</a>
+    </h4>
+    
+    <p id="output"></p>
+    
+    <script>
+        var Module = {
+            print: function() {
+                var e = document.getElementById("output");
+                return e && (e.value = ""), function(n) {
+                    arguments.length > 1 && (n = Array.prototype.slice.call(arguments).join(" ")),
+                    console.log(n),
+                    e && (e.value += n + "\n", e.scrollTop = e.scrollHeight)
+                }
+            }(),
+            canvas: document.getElementById("canvas")
+        };
+    </script>
+    <script src="index.js" async></script>
+</body>
+</html>

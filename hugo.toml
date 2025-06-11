@@ -1,50 +1,30 @@
 baseURL = 'https://solmazfs.github.io/blog'
 languageCode = 'en-us'
-title = 'blog.solmazfs'
-
-[markup.goldmark.renderer]
-unsafe= true
-
-[[cascade]]
-draft = false
-[cascade._target]
-kind = 'page'
-
-[author]
-  name = "solmazfs"
-  email = "info.solmazfs@gmail.com"
-  bio = "Short bio about the author."
-  website = "https://yourwebsite.com"
-  twitter = "https://twitter.com/yourprofile"
+title = 'blog'
+theme = "tm-academic"
 
 [menu]
-  [[menu.main]]
-    identifier = "posts"
-    name = "posts"
-    url = "/posts/"
-    weight = 1
+	[[menu.main]]
+		name = "posts"
+		url = "/posts/"
+		weight = 10
+	[[menu.main]]
+		name = "categories"
+		url = "/categories/"
+		weight = 20
+	[[menu.main]]
+		name = "projects"
+		url = "/projects/"
+		weight = 30
+	[[menu.main]]
+		name = "now"
+		url = "/now/"
+		weight = 40
+	[[menu.main]]
+		name = "log"
+		url = "/log/"
+		weight = 50
 
-  [[menu.main]]
-    identifier = "categories"
-    name = "categories"
-    url = "/categories/"
-    weight = 2
-  [[menu.main]]
-    identifier = "projects"
-    name = "projects"
-    url = "/projects/"
-    weight = 3
-  [[menu.sidebar]]
-    identifier = "log"
-    name = "log"
-    url = "/log/"
-    weight = 1
-
-  [[menu.sidebar]]
-    identifier = "now"
-    name = "now"
-    url = "/now/"
-    weight = 2
-
-[frontmatter]
-    lastmod = [ "lastmod", ":git", "date", "publishDate" ]
+[params]
+    copyright = "BY-NC-SA 4.0"
+    author = "solmazfs"

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="UTF-8">
+	<title>My New Hugo Site</title>
+	<link rel="stylesheet" href="/links/pub.css">
+	<link rel="stylesheet" href="/links/screen.css">
+	<link rel="stylesheet" href="/links/custom.css">
+</head>
+<body>
+	<header>
+    <a href="http://localhost:1313/" class="logo">solmazfs</a>
+</header>
+<nav>
+    <ul>
+        
+        <li><a href="/posts/">posts</a></li>
+        
+        <li><a href="/categories/">categories</a></li>
+        
+        <li><a href="/projects/">projects</a></li>
+        
+        <li><a href="/now/">now</a></li>
+        
+        <li><a href="/log/">log</a></li>
+        
+    </ul>
+</nav>
+
+	<main>
+<article class="counter-skip">
+    <div>
+        <p>This page is my personal, evolving collection of essential command-line snippets and quick tricks for quick reference.</p>
+<h2 id="imagemagick">imagemagick</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span># resize half an image
+</span></span><span style="display:flex;"><span>convert -resize 50% input.png output.png
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># add border to an image
+</span></span><span style="display:flex;"><span>convert -bordercolor white -border 3 -bordercolor black -border 86 input.png output.png
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># image dithering
+</span></span><span style="display:flex;"><span>convert &lt; input .png &gt; -resize &lt; 800x800 &gt; -colorspace gray -ordered-dither o8x8 &lt; output .png &gt;
+</span></span></code></pre></div><h2 id="didder">didder</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span># image dithering
+</span></span><span style="display:flex;"><span>didder --palette &#39;black white&#39; -i input.png -o output.png bayer 16x16
+</span></span></code></pre></div><h2 id="ffmpeg">ffmpeg</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span># cut specific timeline from video
+</span></span><span style="display:flex;"><span>ffmpeg -ss &lt; starting point &gt; -i &lt; input &gt; -t &lt; how long &gt; -vcodec copy -acodec copy &lt; output &gt;
+</span></span><span style="display:flex;"><span># e.g.
+</span></span><span style="display:flex;"><span>ffmpeg -ss 00:00:30 -i input.mp4 -t 00:00:05 -vcodec copy -acodec copy output.mp4
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># merge multiple videos
+</span></span><span style="display:flex;"><span>vim files.txt
+</span></span><span style="display:flex;"><span>    file &#39;vid_1.mp4&#39;
+</span></span><span style="display:flex;"><span>    file &#39;vid_2.mp4&#39;
+</span></span><span style="display:flex;"><span>ffmpeg -f concat -safe 0 -i files.txt -c copy output.mp4
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># convert mp4 to mp3
+</span></span><span style="display:flex;"><span>ffmpeg -i input.mp4 -vn -acodec libmp3lame -ac 2 -ab 160k -ar 48000 output.mp3
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># convert webm to mp4
+</span></span><span style="display:flex;"><span>ffmpeg -fflags +genpts -i input.webm -r 24 output.mp4
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># decrease music volume
+</span></span><span style="display:flex;"><span>ffmpeg -i input.mp3 -filter:a &#34;volume=0.2&#34; -c:a pcm_f32le output.wav
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># add music for a video
+</span></span><span style="display:flex;"><span>ffmpeg -i input.mp4 -i input.wav -map 0:v -map 1:a -c:v copy -shortest output.mp4
+</span></span></code></pre></div><h2 id="other">other</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span># sync two files
+</span></span><span style="display:flex;"><span>rsync ~/.bashrc backup/.bashrc
+</span></span><span style="display:flex;"><span># get specific page(s) from pdf
+</span></span><span style="display:flex;"><span>pdftk &lt; input &gt; cat &lt; start &gt;-&lt; end &gt; output &lt; output &gt;
+</span></span></code></pre></div>
+    </div>
+</article>
+</main>
+    <footer>
+    <p style="padding:0; margin:0;">
+    <span style="float:left;">&copy; 2025 — BY-NC-SA 4.0</span>
+    <span style="float:right;"> <small>updated</small> Jun 11, 2025</span>
+    </p>
+</footer>
+
+</body>
+</html>

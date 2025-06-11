@@ -1,0 +1,58 @@
+[reading]
+    [[reading.items]]
+        title = "Hiçten Az"
+        author = "Slavoj Žižek"
+
+[to_read]
+    [[to_read.items]]
+        title = "Dune"
+        author = "Frank Herbert"
+    [[to_read.items]]
+        title = "Busy Doing Nothing"
+        author = "Rek & Devine"
+
+[years]
+    [years."2022"]
+        [[years."2022".items]]
+            title = "test"
+            author = "teeest"
+    [years."2021"]
+        [[years."2021".items]]
+            title = "Sürdürülebilir Beklentilere Teamülen Sanat"
+            author = "Fevziye EYİGÖR PELİKOĞLU"
+        [[years."2021".items]]
+            title = "Kötülük Üzerine Bir Deneme"
+            author = "Terry Eagleton"
+        [[years."2021".items]]
+            title = "Noam Chomsky İle İki Saat"
+            author = "Denis Robert&Weronika Zarachoxicz"
+        [[years."2021".items]]
+            title = "Böyle Söyledi Zerdüşt"
+            author = "Friedrich W. Nietzsche, çev: Mustafa Tüzel"
+        [[years."2021".items]]
+            title = "Lontano"
+            author = "Jean-Christophe Grangé"
+        [[years."2021".items]]
+            title = "Kongo’ya Ağıt"
+            author = "Jean-Christophe Grangé"
+        [[years."2021".items]]
+            title = "Kaiken"
+            author = "Jean-Christophe Grangé"
+        [[years."2021".items]]
+            title = "Taş Meclisi"
+            author = "Jean-Christophe Grangé"
+        [[years."2021".items]]
+            title = "Koloni"
+            author = "Jean-Christophe Grangé"
+        [[years."2021".items]]
+            title = "Siyah Kan"
+            author = "Jean-Christophe Grangé"
+        [[years."2021".items]]
+            title = "Şeytan Yemini"
+            author = "Jean-Christophe Grangé"
+        [[years."2021".items]]
+            title = "Beyaz Gemi"
+            author = "Cengiz Aytmatov"
+        [[years."2021".items]]
+            title = "Deniz Kıyısında Koşan Ala Köpek"
+            author = "Cengiz Aytmatov"

@@ -1,0 +1,16 @@
+{{ define "main" }}
+{{ $latestProject := .Site.Data.projects.latest_completed_project }}
+<div class="caption counter-skip">
+    <h2><b>Latest project: </b>{{ $latestProject.title }} &mdash; Project <a href="/">link.</a></h2>
+    <br/>
+    {{ .Content }}
+    {{ range site.Data.books.reading.items }}
+    <p>Currently reading: <cite><strong>{{ .title }}</strong> &mdash; {{ .author }}</cite> See other <a href="/readings/">readings.</a></p>
+    {{ end }}
+    {{ range site.Data.media.watch_list.movies }}
+    <p>Currently watching: <cite><strong>{{ .title }}</strong></cite> See full <a href="/media/">list.</a></p>
+    {{ end }}
+
+    <cite>This website has no tracking or analytics.</cite>
+</div>
+{{ end }}

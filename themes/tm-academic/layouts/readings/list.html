@@ -1,0 +1,41 @@
+{{ define "main" }}
+<div class="m-list counter-skip">
+    {{ if .Content }}
+        {{ .Content }}
+    {{ end }}
+
+    <h2>Currently reading</h2>
+    <ul>
+        {{ range site.Data.books.reading.items }}
+        <li><strong>{{ .title }}</strong> - {{ .author }}</li>
+        {{ end }}
+    </ul>
+
+    <h2>Want to read</h2>
+    <ul>
+        {{ range site.Data.books.to_read.items }}
+            <li><strong>{{ .title }}</strong> &mdash; {{ .author }}</li>
+        {{ end }}
+    </ul>
+
+    {{ $years := slice }}
+    {{ range $yearKey, $_ := site.Data.books.years }}
+        {{ $years = $years | append $yearKey }}
+    {{ end }}
+
+    {{ $reversedSortedYears := sort $years | collections.Reverse }}
+
+    {{ range $reversedSortedYears }}
+        {{ if eq . "2021" }}
+            <h2>&mdash;{{ . }}</h2>
+        {{ else }}
+            <h2>{{ . }}</h2>
+        {{ end }}
+        <ul>
+            {{ range (index site.Data.books.years .).items }}
+                <li><strong>{{ .title }}</strong> &mdash; {{ .author }}</li>
+            {{ end }}
+        </ul>
+    {{ end }}
+</div>
+{{ end }}
