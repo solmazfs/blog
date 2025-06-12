@@ -8,22 +8,22 @@ link = "/"
 title = "Pong (Raylib & WebASM)"
 description = "A classic Pong game developed with C and the Raylib library. My goal with this project is to better learn Raylib, solidify my C programming skills, and gain a deeper understanding of classic game mechanics."
 date = 2022-11-02
-link = "/games/raylib_pong-webasm"
+link = "games/raylib_pong-webasm"
 
 [[completed_projects]]
 title = "Snake (Raylib & WebASM)"
 description = "A classic Snake game developed with C and the Raylib library. My goal with this project is to better learn Raylib, solidify my C programming skills, and gain a deeper understanding of classic game mechanics."
 date = 2022-10-16
-link = "/games/raylib_snake-webasm"
+link = "games/raylib_snake-webasm"
 
 [[completed_projects]]
 title = "Tic-Tac-Toe (Raylib & WebASM)"
 description = "A classic Tic-Tac-Toe game developed with C and the Raylib library. My goal with this project is to better learn Raylib, solidify my C programming skills, and gain a deeper understanding of classic game mechanics."
 date = 2022-08-25
-link = "/games/raylib_tictactoe-webasm"
+link = "games/raylib_tictactoe-webasm"
 
 [[completed_projects]]
 title = "Conway's Game of Life (Raylib & WebASM)"
 description = "A C-based implementation of Conway's Game of Life using the Raylib library."
 date = 2022-11-05
-link = "/projects/game_of_life"
+link = "projects/game_of_life"
