@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="{{ "links/pub.css" | relURL }}">
 	<link rel="stylesheet" href="{{ "links/screen.css" | relURL }}">
 	<link rel="stylesheet" href="{{ "links/custom.css" | relURL }}">
-    <title> {{ .Site.author }} &mdash; blog</title>
+    <title> {{ .Site.Params.author }} &mdash; blog</title>
 </head>
 <body>
 	{{ partial "navbar.html" . }}

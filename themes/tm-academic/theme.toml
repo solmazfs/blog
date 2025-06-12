@@ -1,6 +1,5 @@
 name = "test"
 license = "MIT"
 description = "test"
-author = "test"
 homepage = "/"
 min_version = "0.80.0"
