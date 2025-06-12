@@ -1,7 +1,7 @@
 {{ define "main" }}
 {{ $latestProject := .Site.Data.projects.latest_completed_project }}
 <div class="caption counter-skip">
-    <h2><b>Latest project: </b>{{ $latestProject.title }} &mdash; Project <a href="../">link.</a></h2>
+    <h2><b>Latest project: </b>{{ $latestProject.title }} &mdash; Project <a href="/blog/">link.</a></h2>
     <br/>
     {{ .Content }}
     {{ range site.Data.books.reading.items }}
