@@ -2,7 +2,7 @@
 title = "My Personal Blog Website"
 description = "Designed and developed a minimalist, responsive personal blog site using Hugo, focusing on clean design and efficient content delivery."
 date = 2025-06-11
-link = "/"
+link = "../"
 
 [[completed_projects]]
 title = "Pong (Raylib & WebASM)"

@@ -5,10 +5,10 @@
     <br/>
     {{ .Content }}
     {{ range site.Data.books.reading.items }}
-    <p>Currently reading: <cite><strong>{{ .title }}</strong> &mdash; {{ .author }}</cite> See other <a href="/readings/">readings.</a></p>
+    <p>Currently reading: <cite><strong>{{ .title }}</strong> &mdash; {{ .author }}</cite> See other <a href="readings/">readings.</a></p>
     {{ end }}
     {{ range site.Data.media.watch_list.movies }}
-    <p>Currently watching: <cite><strong>{{ .title }}</strong></cite> See full <a href="/media/">list.</a></p>
+    <p>Currently watching: <cite><strong>{{ .title }}</strong></cite> See full <a href="media/">list.</a></p>
     {{ end }}
 
     <cite>This website has no tracking or analytics.</cite>
