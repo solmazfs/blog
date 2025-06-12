@@ -1,187 +1,43 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>home on blog.solmazfs</title><link>https://solmazfs.github.io/blog/</link><description>Recent content in home on blog.solmazfs</description><generator>Hugo</generator><language>en-us</language><managingEditor>info.solmazfs@gmail.com (solmazfs)</managingEditor><webMaster>info.solmazfs@gmail.com (solmazfs)</webMaster><lastBuildDate>Wed, 11 Sep 2024 15:29:19 +0300</lastBuildDate><atom:link href="https://solmazfs.github.io/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>Ales Hazırlık</title><link>https://solmazfs.github.io/blog/posts/ales-hazirlik/</link><pubDate>Wed, 11 Sep 2024 15:29:19 +0300</pubDate><author>info.solmazfs@gmail.com (solmazfs)</author><guid>https://solmazfs.github.io/blog/posts/ales-hazirlik/</guid><description>&lt;h2 id="alese-hazırlık-sözel-deneyimim-ve-önerilerim">ALES’e Hazırlık: Sözel Deneyimim ve Önerilerim&lt;/h2>
-&lt;p>ALES (Akademik Personel ve Lisansüstü Eğitimi Giriş Sınavı) akademik kariyer hedefi olan ya da yüksek lisans yapmak isteyenler için oldukça önemli bir adım. Benim deneyimim özellikle sözel alanla sınırlı, dolayısıyla sayısal alanda çalışacaklar için ekstra bir program gerekecektir. Ancak burada sözel alanda başarılı olmanızı sağlayacak süreci sizlerle paylaşmak istiyorum.&lt;/p>
-&lt;h2 id="kaynaklar-ve-hazırlık-süreci">Kaynaklar ve Hazırlık Süreci&lt;/h2>
-&lt;p>İlk olarak, &lt;strong>ÖSYM&amp;rsquo;nin şimdiye kadar çıkmış tüm ALES soru kitapçıklarını&lt;/strong> edinmenizi öneririm. Bu, sınavın yapısını ve soru tiplerini anlamak için en değerli kaynak olacaktır. Bunun yanında, &lt;strong>farklı yayınevlerinden deneme sınavları&lt;/strong> da elinizde bulunsun. Soru çeşitliliğini artırmak, farklı bakış açılarını anlamanıza yardımcı olacaktır.&lt;/p></description></item><item><title>Projects</title><link>https://solmazfs.github.io/blog/projects/</link><pubDate>Mon, 22 Aug 2022 09:03:23 +0300</pubDate><author>info.solmazfs@gmail.com (solmazfs)</author><guid>https://solmazfs.github.io/blog/projects/</guid><description>&lt;p>[&lt;strong>Webdesign&lt;/strong>] Personal, artwork gallery themes/website.&lt;/p>
-&lt;blockquote>
-&lt;p>(start: May,2024 | done: May,2024) — Link: &lt;a href="https://solmazfs.github.io/">Website&lt;/a>&lt;/p>
-&lt;/blockquote>
-&lt;p>[&lt;strong>Game-Dev&lt;/strong>] Pong, using raylib videogames library.&lt;/p>
-&lt;blockquote>
-&lt;p>(start: October,2022 | done: - ) — Link: &lt;a href="../extra/raylib_pong-webasm/">Play&lt;/a>&lt;/p>
-&lt;/blockquote>
-&lt;p>[&lt;strong>Game-Dev&lt;/strong>] Snake, using raylib videogames library.&lt;/p>
-&lt;blockquote>
-&lt;p>(start: October,2022 | done: October,2022 ) — Link: &lt;a href="../extra/raylib_snake-webasm/">Play&lt;/a>&lt;/p>
-&lt;/blockquote>
-&lt;p>[&lt;strong>Game-Dev&lt;/strong>] Tictactoe, using raylib videogames library.&lt;/p>
-&lt;blockquote>
-&lt;p>(start: June,2022 | July,2022 ) — Link: &lt;a href="../extra/raylib_tictactoe-webasm/">Play&lt;/a>&lt;/p>
-&lt;/blockquote>
-&lt;p>[&lt;strong>Webdesign&lt;/strong>] Personal, artwork gallery themes/website.&lt;/p>
-&lt;blockquote>
-&lt;p>(start: April,2022 | done: June,2022) — Link: &lt;a href="https://solmazfs.github.io/gallery/">Gallery&lt;/a>&lt;/p>
-&lt;/blockquote></description></item><item><title>Books</title><link>https://solmazfs.github.io/blog/books/</link><pubDate>Wed, 20 Apr 2022 12:14:48 +0300</pubDate><author>info.solmazfs@gmail.com (solmazfs)</author><guid>https://solmazfs.github.io/blog/books/</guid><description>&lt;h2 id="currently-reading">Currently reading&lt;/h2>
-&lt;ul>
-&lt;li>&lt;strong>Hiçten Az&lt;/strong>, Slavoj Žižek&lt;/li>
-&lt;/ul>
-&lt;h2 id="want-to-read">Want to read&lt;/h2>
-&lt;ul>
-&lt;li>&lt;strong>Dune&lt;/strong>, Frank Herbert&lt;/li>
-&lt;li>&lt;strong>Busy Doing Nothing&lt;/strong>, Rek &amp;amp; Devine&lt;/li>
-&lt;/ul>
-&lt;h2 id="2022-reading-list">2022 reading list&lt;/h2>
-&lt;h2 id="mdash-2021-reading-list">— 2021 reading list&lt;/h2>
-&lt;blockquote>
-&lt;p>remembered&lt;/p>
-&lt;/blockquote>
-&lt;ul>
-&lt;li>&lt;strong>Sürdürülebilir Beklentilere Teamülen Sanat&lt;/strong>, Fevziye EYİGÖR PELİKOĞLU&lt;/li>
-&lt;li>&lt;strong>Kötülük Üzerine Bir Deneme&lt;/strong>, Terry Eagleton&lt;/li>
-&lt;li>&lt;strong>Noam Chomsky İle İki Saat&lt;/strong>, Denis Robert&amp;amp;Weronika Zarachoxicz&lt;/li>
-&lt;li>&lt;strong>Böyle Söyledi Zerdüşt&lt;/strong>, Friedrich W. Nietzsche, &lt;em>çev: Mustafa Tüzel&lt;/em>&lt;/li>
-&lt;li>&lt;strong>Lontano&lt;/strong>, Jean-Christophe Grangé&lt;/li>
-&lt;li>&lt;strong>Kongo&amp;rsquo;ya Ağıt&lt;/strong>, Jean-Christophe Grangé&lt;/li>
-&lt;li>&lt;strong>Kaiken&lt;/strong>, Jean-Christophe Grangé&lt;/li>
-&lt;li>&lt;strong>Taş Meclisi&lt;/strong>, Jean-Christophe Grangé&lt;/li>
-&lt;li>&lt;strong>Koloni&lt;/strong>, Jean-Christophe Grangé&lt;/li>
-&lt;li>&lt;strong>Siyah Kan&lt;/strong>, Jean-Christophe Grangé&lt;/li>
-&lt;li>&lt;strong>Şeytan Yemini&lt;/strong>, Jean-Christophe Grangé&lt;/li>
-&lt;li>&lt;strong>Beyaz Gemi&lt;/strong>, Cengiz Aytmatov&lt;/li>
-&lt;li>&lt;strong>Deniz Kıyısında Koşan Ala Köpek&lt;/strong>, Cengiz Aytmatov&lt;/li>
-&lt;/ul></description></item><item><title>Now</title><link>https://solmazfs.github.io/blog/now/</link><pubDate>Wed, 20 Apr 2022 00:33:18 +0300</pubDate><author>info.solmazfs@gmail.com (solmazfs)</author><guid>https://solmazfs.github.io/blog/now/</guid><description>&lt;p>01.04.2024, I quit from working factory.&lt;/p>
-&lt;blockquote>
-&lt;p>It is what it is.&lt;/p>
-&lt;/blockquote>
-&lt;p>17.01.2023, I started to work in factory.&lt;/p>
-&lt;blockquote>
-&lt;p>Even though it is very difficult, I have to resist.&lt;/p>
-&lt;/blockquote>
-&lt;p>05.04.2022, I applied for a &amp;ldquo;lecturer&amp;rdquo; position for the first time.&lt;/p>
-&lt;blockquote>
-&lt;p>My application was accepted but I could not take the exam.&lt;/p>
-&lt;/blockquote>
-&lt;p>28.03.2022, YÖKDİL(Sos.Bil.) exam result ↠  &lt;mark>65&lt;/mark>&lt;/p>
-&lt;blockquote>
-&lt;p>This exam was not as easy as i expected, so i need to concentrate more on advanced vocabulary studies.&lt;/p></description></item><item><title>Movies&amp;Series</title><link>https://solmazfs.github.io/blog/movies-and-series/</link><pubDate>Tue, 05 Apr 2022 19:47:25 +0300</pubDate><author>info.solmazfs@gmail.com (solmazfs)</author><guid>https://solmazfs.github.io/blog/movies-and-series/</guid><description>&lt;ol>
-&lt;li>&lt;a href="#watch-list">Watch list&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#movies">Movies&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#series">Series&lt;/a>&lt;/li>
-&lt;/ol>
-&lt;h2 id="watch-list">Watch List&lt;/h2>
-&lt;ul>
-&lt;li>Beetlejuice (1988)&lt;/li>
-&lt;/ul>
-&lt;h2 id="movies">Movies&lt;/h2>
-&lt;ul>
-&lt;li>Run and Gun (2022)&lt;/li>
-&lt;li>Dune (2021)&lt;/li>
-&lt;li>The Last Duel (2021)&lt;/li>
-&lt;li>&lt;mark>De uskyldige (2021)&lt;/mark>&lt;/li>
-&lt;li>&lt;mark>Narayama bushikô (1958)&lt;/mark>&lt;/li>
-&lt;li>&lt;mark>Monos (2019)&lt;/mark>&lt;/li>
-&lt;li>&lt;mark>Málmhaus (2013)&lt;/mark>&lt;/li>
-&lt;li>&lt;mark>Gretel &amp;amp; Hansel (2020)&lt;/mark>&lt;/li>
-&lt;li>&lt;mark>November (2017)&lt;/mark>&lt;/li>
-&lt;li>&lt;mark>Orda (The Horde) (2012)&lt;/mark>&lt;/li>
-&lt;li>Trick &amp;lsquo;r Treat (2007)&lt;/li>
-&lt;li>The Golden Glove (2019)&lt;/li>
-&lt;li>&lt;mark>Frances Ha (2012)&lt;/mark>&lt;/li>
-&lt;li>The Lord of the Rings 1,2,3&lt;/li>
-&lt;li>The Hobbit 1,2,3&lt;/li>
-&lt;li>Only Lovers Left Alive (2013)&lt;/li>
-&lt;li>Shame (2011)&lt;/li>
-&lt;li>Into the Wild (2007)&lt;/li>
-&lt;li>The Grand Budapest Hotel (2014)&lt;/li>
-&lt;li>Wristcutters: A Love Story (2006)&lt;/li>
-&lt;li>Portrait de la jeune fille en feu (2019)&lt;/li>
-&lt;li>Léon (1994)&lt;/li>
-&lt;li>Lorelei (2020)&lt;/li>
-&lt;li>The Lobster (2015)&lt;/li>
-&lt;li>7 Prisioneiros (2021)&lt;/li>
-&lt;li>Pan&amp;rsquo;s Labyrinth (2006)&lt;/li>
-&lt;li>S.Darko (2009)&lt;/li>
-&lt;li>Donnie Darko (2001)&lt;/li>
-&lt;li>Alice (1989)&lt;/li>
-&lt;li>Return to Oz (1985)&lt;/li>
-&lt;li>Jumanji (1995)&lt;/li>
-&lt;li>Amores Perros (2000)&lt;/li>
-&lt;li>Powder Blue (2008)&lt;/li>
-&lt;li>Angel-A (2005)&lt;/li>
-&lt;li>Die Hard 4.0 (2007)&lt;/li>
-&lt;li>Sin City (2005)&lt;/li>
-&lt;li>Sin City A Dame To Kill For (2014)&lt;/li>
-&lt;li>Franklyn (2008)&lt;/li>
-&lt;li>Eternal Sunshine of the Spotless Mind (2004)&lt;/li>
-&lt;li>The Number 23 (2007)&lt;/li>
-&lt;li>Miss Peregrine&amp;rsquo;s Home for Peculiar Children (2016)&lt;/li>
-&lt;li>&lt;mark>Naked (1993)&lt;/mark>&lt;/li>
-&lt;li>&lt;mark>Ben X (2007)&lt;/mark>&lt;/li>
-&lt;li>&lt;mark>Let the Right One In (2008)&lt;/mark>&lt;/li>
-&lt;li>The Grey (2011)&lt;/li>
-&lt;li>Logan (2017)&lt;/li>
-&lt;li>Riddick (2013)&lt;/li>
-&lt;li>Blood Diamond (2006)&lt;/li>
-&lt;li>Mad Max: Fury Road (2015)&lt;/li>
-&lt;li>The Call of the Wild (2020)&lt;/li>
-&lt;li>&lt;mark>Spirited Away (2001)&lt;/mark>&lt;/li>
-&lt;li>My Neighbor Totoro (1988)&lt;/li>
-&lt;li>Howl&amp;rsquo;s Moving Castle (2004)&lt;/li>
-&lt;li>Kiki&amp;rsquo;s Delivery Service (1989)&lt;/li>
-&lt;li>Mary and the Witch&amp;rsquo;s Flower (2017)&lt;/li>
-&lt;li>&lt;mark>WALL-E (2008)&lt;/mark>&lt;/li>
-&lt;li>&lt;mark>9 (2009)&lt;/mark>&lt;/li>
-&lt;li>Inside Out (2015)&lt;/li>
-&lt;li>Soul (2020)&lt;/li>
-&lt;li>Shrek 1,2,3&lt;/li>
-&lt;li>Brave (2012)&lt;/li>
-&lt;li>Wreck-It Ralph (2012)&lt;/li>
-&lt;li>The Boxtrolls (2014)&lt;/li>
-&lt;li>Corpse Bride (2005)&lt;/li>
-&lt;li>Frankenweenie (2012)&lt;/li>
-&lt;li>Mary and Max (2009)&lt;/li>
-&lt;li>&lt;mark>Coraline (2009)&lt;/mark>&lt;/li>
-&lt;li>Fantastic Mr. Fox (2009)&lt;/li>
-&lt;/ul>
-&lt;h2 id="series">Series&lt;/h2>
-&lt;ul>
-&lt;li>Disenchantment&lt;/li>
-&lt;li>Rick and Morty&lt;/li>
-&lt;li>&lt;mark>Over the Garden Wall&lt;/mark>&lt;/li>
-&lt;li>Regular Show&lt;/li>
-&lt;li>Close Enough&lt;/li>
-&lt;li>&lt;mark>Invasion&lt;/mark>&lt;/li>
-&lt;li>Little Witch Academia&lt;/li>
-&lt;li>Love, Death &amp;amp; Robots&lt;/li>
-&lt;li>The Book of Boba Fett&lt;/li>
-&lt;li>The Mandalorian&lt;/li>
-&lt;li>The Witcher&lt;/li>
-&lt;li>Biohackers&lt;/li>
-&lt;li>&lt;mark>Dark&lt;/mark>&lt;/li>
-&lt;li>See&lt;/li>
-&lt;li>Silicon Valley&lt;/li>
-&lt;li>Milennium&lt;/li>
-&lt;li>&lt;mark>Stateless&lt;/mark>&lt;/li>
-&lt;li>&lt;mark>Penny Dreadful&lt;/mark>&lt;/li>
-&lt;li>Lucifer&lt;/li>
-&lt;li>WandaVision&lt;/li>
-&lt;li>Vis a Vis&lt;/li>
-&lt;li>La casa de papel&lt;/li>
-&lt;li>&lt;mark>Black Mirror&lt;/mark>&lt;/li>
-&lt;li>&lt;mark>Mr.Robot&lt;/mark>&lt;/li>
-&lt;li>Person of Interest&lt;/li>
-&lt;li>Breaking Bad&lt;/li>
-&lt;li>shameless&lt;/li>
-&lt;li>Easy&lt;/li>
-&lt;li>&lt;mark>Westworld&lt;/mark>&lt;/li>
-&lt;li>Taboo&lt;/li>
-&lt;li>Marco Polo&lt;/li>
-&lt;li>&lt;mark>Norsemen&lt;/mark>&lt;/li>
-&lt;li>Vikings: Valhalla&lt;/li>
-&lt;li>Vikings&lt;/li>
-&lt;li>Merlin&lt;/li>
-&lt;li>Game of Thrones&lt;/li>
-&lt;li>Chilling Adventures of Sabrina&lt;/li>
-&lt;li>American Horror Story&lt;/li>
-&lt;li>American Horror Stories&lt;/li>
-&lt;li>Masters of Horror&lt;/li>
-&lt;/ul></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>_index on blog</title><link>https://solmazfs.github.io/blog/</link><description>Recent content in _index on blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 08 Apr 2022 13:53:58 +0300</lastBuildDate><atom:link href="https://solmazfs.github.io/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>Go-To Command Cheat Sheet</title><link>https://solmazfs.github.io/blog/posts/go-to-command-cheat-sheet/</link><pubDate>Fri, 08 Apr 2022 13:53:58 +0300</pubDate><guid>https://solmazfs.github.io/blog/posts/go-to-command-cheat-sheet/</guid><description>&lt;p>This page is my personal, evolving collection of essential command-line snippets and quick tricks for quick reference.&lt;/p>
+&lt;h2 id="imagemagick">imagemagick&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span># resize half an image
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>convert -resize 50% input.png output.png
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># add border to an image
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>convert -bordercolor white -border 3 -bordercolor black -border 86 input.png output.png
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># image dithering
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>convert &amp;lt; input .png &amp;gt; -resize &amp;lt; 800x800 &amp;gt; -colorspace gray -ordered-dither o8x8 &amp;lt; output .png &amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="ffmpeg">ffmpeg&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span># cut specific timeline from video
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ffmpeg -ss &amp;lt; starting point &amp;gt; -i &amp;lt; input &amp;gt; -t &amp;lt; how long &amp;gt; -vcodec copy -acodec copy &amp;lt; output &amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># e.g.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ffmpeg -ss 00:00:30 -i input.mp4 -t 00:00:05 -vcodec copy -acodec copy output.mp4
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># merge multiple videos
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>vim files.txt
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> file &amp;#39;vid_1.mp4&amp;#39;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> file &amp;#39;vid_2.mp4&amp;#39;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ffmpeg -f concat -safe 0 -i files.txt -c copy output.mp4
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># convert mp4 to mp3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ffmpeg -i input.mp4 -vn -acodec libmp3lame -ac 2 -ab 160k -ar 48000 output.mp3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># convert webm to mp4
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ffmpeg -fflags +genpts -i input.webm -r 24 output.mp4
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># decrease music volume
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ffmpeg -i input.mp3 -filter:a &amp;#34;volume=0.2&amp;#34; -c:a pcm_f32le output.wav
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># add music for a video
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ffmpeg -i input.mp4 -i input.wav -map 0:v -map 1:a -c:v copy -shortest output.mp4
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="other">other&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span># image dithering
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>didder --palette &amp;#39;black white&amp;#39; -i input.png -o output.png bayer 16x16
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># sync two files
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rsync ~/.bashrc backup/.bashrc
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># get specific page(s) from pdf
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pdftk &amp;lt; input &amp;gt; cat &amp;lt; start &amp;gt;-&amp;lt; end &amp;gt; output &amp;lt; output &amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

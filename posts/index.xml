@@ -1,4 +1,43 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on blog.solmazfs</title><link>https://solmazfs.github.io/blog/posts/</link><description>Recent content in Posts on blog.solmazfs</description><generator>Hugo</generator><language>en-us</language><managingEditor>info.solmazfs@gmail.com (solmazfs)</managingEditor><webMaster>info.solmazfs@gmail.com (solmazfs)</webMaster><lastBuildDate>Wed, 11 Sep 2024 15:29:19 +0300</lastBuildDate><atom:link href="https://solmazfs.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Ales Hazırlık</title><link>https://solmazfs.github.io/blog/posts/ales-hazirlik/</link><pubDate>Wed, 11 Sep 2024 15:29:19 +0300</pubDate><author>info.solmazfs@gmail.com (solmazfs)</author><guid>https://solmazfs.github.io/blog/posts/ales-hazirlik/</guid><description>&lt;h2 id="alese-hazırlık-sözel-deneyimim-ve-önerilerim">ALES’e Hazırlık: Sözel Deneyimim ve Önerilerim&lt;/h2>
-&lt;p>ALES (Akademik Personel ve Lisansüstü Eğitimi Giriş Sınavı) akademik kariyer hedefi olan ya da yüksek lisans yapmak isteyenler için oldukça önemli bir adım. Benim deneyimim özellikle sözel alanla sınırlı, dolayısıyla sayısal alanda çalışacaklar için ekstra bir program gerekecektir. Ancak burada sözel alanda başarılı olmanızı sağlayacak süreci sizlerle paylaşmak istiyorum.&lt;/p>
-&lt;h2 id="kaynaklar-ve-hazırlık-süreci">Kaynaklar ve Hazırlık Süreci&lt;/h2>
-&lt;p>İlk olarak, &lt;strong>ÖSYM&amp;rsquo;nin şimdiye kadar çıkmış tüm ALES soru kitapçıklarını&lt;/strong> edinmenizi öneririm. Bu, sınavın yapısını ve soru tiplerini anlamak için en değerli kaynak olacaktır. Bunun yanında, &lt;strong>farklı yayınevlerinden deneme sınavları&lt;/strong> da elinizde bulunsun. Soru çeşitliliğini artırmak, farklı bakış açılarını anlamanıza yardımcı olacaktır.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on blog</title><link>https://solmazfs.github.io/blog/posts/</link><description>Recent content in Posts on blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 08 Apr 2022 13:53:58 +0300</lastBuildDate><atom:link href="https://solmazfs.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Go-To Command Cheat Sheet</title><link>https://solmazfs.github.io/blog/posts/go-to-command-cheat-sheet/</link><pubDate>Fri, 08 Apr 2022 13:53:58 +0300</pubDate><guid>https://solmazfs.github.io/blog/posts/go-to-command-cheat-sheet/</guid><description>&lt;p>This page is my personal, evolving collection of essential command-line snippets and quick tricks for quick reference.&lt;/p>
+&lt;h2 id="imagemagick">imagemagick&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span># resize half an image
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>convert -resize 50% input.png output.png
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># add border to an image
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>convert -bordercolor white -border 3 -bordercolor black -border 86 input.png output.png
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># image dithering
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>convert &amp;lt; input .png &amp;gt; -resize &amp;lt; 800x800 &amp;gt; -colorspace gray -ordered-dither o8x8 &amp;lt; output .png &amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="ffmpeg">ffmpeg&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span># cut specific timeline from video
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ffmpeg -ss &amp;lt; starting point &amp;gt; -i &amp;lt; input &amp;gt; -t &amp;lt; how long &amp;gt; -vcodec copy -acodec copy &amp;lt; output &amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># e.g.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ffmpeg -ss 00:00:30 -i input.mp4 -t 00:00:05 -vcodec copy -acodec copy output.mp4
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># merge multiple videos
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>vim files.txt
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> file &amp;#39;vid_1.mp4&amp;#39;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> file &amp;#39;vid_2.mp4&amp;#39;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ffmpeg -f concat -safe 0 -i files.txt -c copy output.mp4
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># convert mp4 to mp3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ffmpeg -i input.mp4 -vn -acodec libmp3lame -ac 2 -ab 160k -ar 48000 output.mp3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># convert webm to mp4
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ffmpeg -fflags +genpts -i input.webm -r 24 output.mp4
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># decrease music volume
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ffmpeg -i input.mp3 -filter:a &amp;#34;volume=0.2&amp;#34; -c:a pcm_f32le output.wav
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># add music for a video
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ffmpeg -i input.mp4 -i input.wav -map 0:v -map 1:a -c:v copy -shortest output.mp4
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="other">other&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span># image dithering
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>didder --palette &amp;#39;black white&amp;#39; -i input.png -o output.png bayer 16x16
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># sync two files
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rsync ~/.bashrc backup/.bashrc
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># get specific page(s) from pdf
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pdftk &amp;lt; input &amp;gt; cat &amp;lt; start &amp;gt;-&amp;lt; end &amp;gt; output &amp;lt; output &amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

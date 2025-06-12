@@ -1,28 +1,28 @@
 @media screen {
 
-    html {
-        font-size: 16px;
-    }
+  html {
+    font-size: 16px;
+  }
 
-    body {
-        max-width: 600px;
-        margin: 3em auto 6em;
-        -webkit-column-count: 1;
-        -moz-column-count: 1;
-        column-count: 1;
-    }
+  body {
+    max-width: 600px;
+    margin: 3em auto 6em;
+    -webkit-column-count: 1;
+       -moz-column-count: 1;
+            column-count: 1;
+  }
 
-    p {
-        margin-bottom: 1em;
-    }
+  p {
+    margin-bottom: 1em;
+  }
 
-    th, td {
-        border-width: 1px;
-    }
+  th, td {
+    border-width: 1px;
+  }
 
-    .title {
-        font-size: 2rem;
-    }
+  .title {
+    font-size: 2rem;
+  }
 
 
 }
